@@ -1,688 +1,801 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Complete Guide to Becoming a Full-Stack Developer in 2023 | Ali's Guide Hub</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      The Complete Guide to Becoming a Full-Stack Developer in 2023 | Guide Hubz
+    </title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* CSS Reset & Base Styles */
-        :root {
-            --primary-color: #4F46E5;
-            --secondary-color: #4338CA;
-            --accent-color: #EC4899;
-            --light-color: #F9FAFB;
-            --dark-color: #111827;
-            --gray-color: #6B7280;
-            --max-width: 1200px;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: var(--border-radius);
-        }
-        
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        .logo img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-        
-        .nav-links a {
-            color: var(--dark-color);
-            font-weight: 600;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-        
-        /* Blog Post Hero */
-        .post-hero {
-            padding: 4rem 0 2rem;
-        }
-        
-        .post-hero .container {
-            max-width: 800px;
-        }
-        
-        .post-meta {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--gray-color);
-        }
-        
-        .post-category {
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .post-hero-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            box-shadow: var(--box-shadow);
-        }
-        
-        /* Blog Post Content */
-        .post-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0 4rem;
-        }
-        
-        .post-content h2 {
-            font-size: 1.8rem;
-            margin: 2.5rem 0 1.5rem;
-            color: var(--dark-color);
-        }
-        
-        .post-content h3 {
-            font-size: 1.4rem;
-            margin: 2rem 0 1rem;
-            color: var(--dark-color);
-        }
-        
-        .post-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .post-content ul, .post-content ol {
-            margin-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .post-content li {
-            margin-bottom: 0.8rem;
-            line-height: 1.7;
-        }
-        
-        .post-content img {
-            margin: 2rem auto;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .highlight-box {
-            background: #F3F4F6;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .code-block {
-            background: #1E293B;
-            color: #F8FAFC;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .author-card {
-            display: flex;
-            gap: 1.5rem;
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin: 3rem 0;
-            border: 1px solid #E5E7EB;
-        }
-        
-        .author-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .author-title {
-            color: var(--gray-color);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .author-bio {
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background: rgba(79, 70, 229, 0.1);
-            border-radius: 50%;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        /* Related Posts */
-        .related-posts {
-            padding: 2rem 0 4rem;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .post-card {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border: 1px solid #E5E7EB;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .post-card-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .post-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .post-card:hover .post-card-img img {
-            transform: scale(1.05);
-        }
-        
-        .post-card-content {
-            padding: 1.5rem;
-        }
-        
-        .post-card-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-            color: var(--gray-color);
-        }
-        
-        .post-card-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .post-card-excerpt {
-            color: var(--gray-color);
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        /* Footer Styles */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 5rem 0 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 0.8rem;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 3px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .footer-logo img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .footer-about p {
-            color: #D1D5DB;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: #D1D5DB;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .footer-social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .footer-social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-        
-        .footer-social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #9CA3AF;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 90px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 2rem;
-                padding-top: 3rem;
-                transition: var(--transition);
-                z-index: 99;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .post-hero-img {
-                height: 350px;
-            }
-            
-            .author-card {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .post-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .post-hero-img {
-                height: 250px;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-        ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+      /* CSS Reset & Base Styles */
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #4338ca;
+        --accent-color: #ec4899;
+        --light-color: #f9fafb;
+        --dark-color: #111827;
+        --gray-color: #6b7280;
+        --max-width: 1200px;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--border-radius);
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 600;
+        box-shadow: var(--box-shadow);
+      }
+
+      .btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark-color);
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        color: var(--dark-color);
+        font-weight: 600;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-links a.active {
+        color: var(--primary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--dark-color);
+      }
+
+      /* Blog Post Hero */
+      .post-hero {
+        padding: 4rem 0 2rem;
+      }
+
+      .post-hero .container {
+        max-width: 800px;
+      }
+
+      .post-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--gray-color);
+      }
+
+      .post-category {
+        background: rgba(79, 70, 229, 0.1);
+        color: var(--primary-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .post-hero-img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+        margin: 2rem 0;
+        box-shadow: var(--box-shadow);
+      }
+
+      /* Blog Post Content */
+      .post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      .post-content h2 {
+        font-size: 1.8rem;
+        margin: 2.5rem 0 1.5rem;
+        color: var(--dark-color);
+      }
+
+      .post-content h3 {
+        font-size: 1.4rem;
+        margin: 2rem 0 1rem;
+        color: var(--dark-color);
+      }
+
+      .post-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .post-content ul,
+      .post-content ol {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .post-content li {
+        margin-bottom: 0.8rem;
+        line-height: 1.7;
+      }
+
+      .post-content img {
+        margin: 2rem auto;
+        box-shadow: var(--box-shadow);
+      }
+
+      .highlight-box {
+        background: #f3f4f6;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        margin: 2rem 0;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .code-block {
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        margin: 2rem 0;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+      }
+
+      .author-card {
+        display: flex;
+        gap: 1.5rem;
+        background: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        margin: 3rem 0;
+        border: 1px solid #e5e7eb;
+      }
+
+      .author-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .author-info h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .author-title {
+        color: var(--gray-color);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .author-bio {
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background: rgba(79, 70, 229, 0.1);
+        border-radius: 50%;
+        color: var(--primary-color);
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      /* Related Posts */
+      .related-posts {
+        padding: 2rem 0 4rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .post-card {
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        border: 1px solid #e5e7eb;
+      }
+
+      .post-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .post-card-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .post-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .post-card:hover .post-card-img img {
+        transform: scale(1.05);
+      }
+
+      .post-card-content {
+        padding: 1.5rem;
+      }
+
+      .post-card-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+        font-size: 0.9rem;
+        color: var(--gray-color);
+      }
+
+      .post-card-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .post-card-excerpt {
+        color: var(--gray-color);
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      /* Footer Styles */
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 5rem 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 3px;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .footer-about p {
+        color: #d1d5db;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .footer-links li {
+        margin-bottom: 1rem;
+      }
+
+      .footer-links a {
+        color: #d1d5db;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .footer-social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .footer-social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: var(--transition);
+        font-size: 1.2rem;
+      }
+
+      .footer-social-links a:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #9ca3af;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .nav-links {
+          position: fixed;
+          top: 90px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 90px);
+          background: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 2rem;
+          padding-top: 3rem;
+          transition: var(--transition);
+          z-index: 99;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .post-hero-img {
+          height: 350px;
+        }
+
+        .author-card {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .post-hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .post-hero-img {
+          height: 250px;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="logo.png" alt="Ali's Guide Hub Logo">
-                    <span>Ali's Guide Hub</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="blog.html" class="active"><i class="fas fa-book-open"></i> Blog</a></li>
-                    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                </ul>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <img
+              src="logo.png"
+              alt="Guide Hubz
+
+ Logo"
+            />
+            <span>Guide Hubz </span>
+          </a>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="blog.html" class="active"
+                ><i class="fas fa-book-open"></i> Blog</a
+              >
+            </li>
+            <li>
+              <a href="about.html"><i class="fas fa-user"></i> About</a>
+            </li>
+            <li>
+              <a href="contactus.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <!-- Blog Post Hero -->
     <section class="post-hero">
-        <div class="container">
-            <div class="post-meta">
-                <span class="post-category">Technology</span>
-                <span>June 20, 2023</span>
-                <span><i class="far fa-eye"></i> 1.2K Views</span>
-            </div>
-            <h1>The Complete Guide to Becoming a Full-Stack Developer in 2023</h1>
-            <img src="programming blog.jpg" alt="Full-Stack Development" class="post-hero-img" loading="lazy">
+      <div class="container">
+        <div class="post-meta">
+          <span class="post-category">Technology</span>
+          <span>June 20, 2023</span>
+          <span><i class="far fa-eye"></i> 1.2K Views</span>
         </div>
+        <h1>The Complete Guide to Becoming a Full-Stack Developer in 2023</h1>
+        <img
+          src="programming blog.jpg"
+          alt="Full-Stack Development"
+          class="post-hero-img"
+          loading="lazy"
+        />
+      </div>
     </section>
 
     <!-- Blog Post Content -->
     <section class="post-content">
-        <div class="container">
-            <p>In today's rapidly evolving tech landscape, full-stack developers are in higher demand than ever before. These versatile professionals who can handle both front-end and back-end development are invaluable assets to any tech team. If you're looking to launch or advance your career as a full-stack developer in 2023, this comprehensive guide will walk you through everything you need to know.</p>
-            
-            <h2>What is a Full-Stack Developer?</h2>
-            <p>A full-stack developer is a software engineer proficient in working with both the front-end (client-side) and back-end (server-side) portions of web applications. They understand how to:</p>
-            <ul>
-                <li>Create interactive user interfaces</li>
-                <li>Design and implement server-side logic</li>
-                <li>Work with databases and APIs</li>
-                <li>Ensure optimal performance and security</li>
-                <li>Deploy applications to production environments</li>
-            </ul>
-            
-            <div class="highlight-box">
-                <p><strong>Pro Tip:</strong> Full-stack developers don't necessarily need to be experts in every technology, but they should have working knowledge of all layers in the application stack and understand how they interact.</p>
-            </div>
-            
-            <h2>Essential Skills for Full-Stack Developers in 2023</h2>
-            
-            <h3>Front-End Technologies</h3>
-            <p>The front-end is what users see and interact with. Key technologies include:</p>
-            <ul>
-                <li><strong>HTML5 & CSS3:</strong> The building blocks of web pages</li>
-                <li><strong>JavaScript (ES6+):</strong> The programming language of the web</li>
-                <li><strong>React.js/Vue.js/Angular:</strong> Popular JavaScript frameworks</li>
-                <li><strong>Responsive Design:</strong> Creating sites that work on all devices</li>
-                <li><strong>CSS Preprocessors:</strong> Sass or Less for more maintainable CSS</li>
-            </ul>
-            
-            <h3>Back-End Technologies</h3>
-            <p>The back-end handles business logic, database interactions, and server configuration:</p>
-            <ul>
-                <li><strong>Node.js/Python/Java/Ruby/PHP:</strong> Server-side programming languages</li>
-                <li><strong>Express.js/Django/Spring/Rails/Laravel:</strong> Back-end frameworks</li>
-                <li><strong>RESTful APIs/GraphQL:</strong> Creating and consuming APIs</li>
-                <li><strong>Authentication & Authorization:</strong> JWT, OAuth, sessions</li>
-            </ul>
-            
-            <h3>Database Management</h3>
-            <p>Full-stack developers need to work with databases:</p>
-            <ul>
-                <li><strong>SQL Databases:</strong> PostgreSQL, MySQL, SQL Server</li>
-                <li><strong>NoSQL Databases:</strong> MongoDB, Firebase, Cassandra</li>
-                <li><strong>ORM/ODM:</strong> Sequelize, Mongoose, TypeORM</li>
-            </ul>
-            
-            <h3>DevOps & Deployment</h3>
-            <p>Modern full-stack developers should understand:</p>
-            <ul>
-                <li><strong>Git & GitHub/GitLab:</strong> Version control</li>
-                <li><strong>Docker & Kubernetes:</strong> Containerization</li>
-                <li><strong>CI/CD Pipelines:</strong> Automated testing and deployment</li>
-                <li><strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud</li>
-            </ul>
-            
-            <h2>Learning Path to Become a Full-Stack Developer</h2>
-            
-            <h3>1. Master the Fundamentals</h3>
-            <p>Start with HTML, CSS, and JavaScript. Build simple static websites before moving to dynamic applications.</p>
-            
-            <h3>2. Choose a Front-End Framework</h3>
-            <p>React.js is currently the most popular choice, but Vue.js and Angular are also excellent options.</p>
-            
-            <h3>3. Learn a Back-End Language</h3>
-            <p>Node.js (JavaScript) is great for beginners since you can use the same language on both ends. Python (Django/Flask) is another beginner-friendly option.</p>
-            
-            <h3>4. Understand Databases</h3>
-            <p>Start with a relational database like PostgreSQL, then explore NoSQL options like MongoDB.</p>
-            
-            <h3>5. Build Full-Stack Projects</h3>
-            <p>Combine all your knowledge to create complete applications. Some project ideas:</p>
-            <ul>
-                <li>Task management app</li>
-                <li>E-commerce site</li>
-                <li>Social media dashboard</li>
-                <li>Blog platform with user authentication</li>
-            </ul>
-            
-            <h3>6. Learn Deployment and DevOps</h3>
-            <p>Deploy your projects using platforms like Heroku, Netlify, or Vercel. Learn basic Linux commands and server management.</p>
-            
-            <div class="highlight-box">
-                <p><strong>Learning Tip:</strong> Focus on understanding concepts rather than memorizing syntax. The ability to learn and adapt is more valuable than any specific technology.</p>
-            </div>
-            
-            <h2>2023 Full-Stack Developer Roadmap</h2>
-            <p>Here's a suggested learning timeline:</p>
-            
-            <h3>Months 1-3: Front-End Foundations</h3>
-            <ul>
-                <li>HTML5 semantic markup</li>
-                <li>CSS3 with Flexbox and Grid</li>
-                <li>JavaScript fundamentals (ES6+)</li>
-                <li>Basic DOM manipulation</li>
-            </ul>
-            
-            <h3>Months 4-6: Front-End Framework</h3>
-            <ul>
-                <li>React.js or Vue.js</li>
-                <li>State management (Redux/Vuex)</li>
-                <li>Component-based architecture</li>
-                <li>API consumption with Axios/Fetch</li>
-            </ul>
-            
-            <h3>Months 7-9: Back-End Development</h3>
-            <ul>
-                <li>Node.js with Express.js</li>
-                <li>RESTful API design</li>
-                <li>Database integration</li>
-                <li>Authentication systems</li>
-            </ul>
-            
-            <h3>Months 10-12: Advanced Topics</h3>
-            <ul>
-                <li>TypeScript</li>
-                <li>GraphQL</li>
-                <li>Testing (Jest, Mocha)</li>
-                <li>Deployment and DevOps</li>
-            </ul>
-            
-            <h2>Sample Full-Stack Application Code</h2>
-            <p>Here's a simple Express.js server with React front-end integration:</p>
-            
-            <div class="code-block">
-                <pre><code>// Backend (server.js)
+      <div class="container">
+        <p>
+          In today's rapidly evolving tech landscape, full-stack developers are
+          in higher demand than ever before. These versatile professionals who
+          can handle both front-end and back-end development are invaluable
+          assets to any tech team. If you're looking to launch or advance your
+          career as a full-stack developer in 2023, this comprehensive guide
+          will walk you through everything you need to know.
+        </p>
+
+        <h2>What is a Full-Stack Developer?</h2>
+        <p>
+          A full-stack developer is a software engineer proficient in working
+          with both the front-end (client-side) and back-end (server-side)
+          portions of web applications. They understand how to:
+        </p>
+        <ul>
+          <li>Create interactive user interfaces</li>
+          <li>Design and implement server-side logic</li>
+          <li>Work with databases and APIs</li>
+          <li>Ensure optimal performance and security</li>
+          <li>Deploy applications to production environments</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p>
+            <strong>Pro Tip:</strong> Full-stack developers don't necessarily
+            need to be experts in every technology, but they should have working
+            knowledge of all layers in the application stack and understand how
+            they interact.
+          </p>
+        </div>
+
+        <h2>Essential Skills for Full-Stack Developers in 2023</h2>
+
+        <h3>Front-End Technologies</h3>
+        <p>
+          The front-end is what users see and interact with. Key technologies
+          include:
+        </p>
+        <ul>
+          <li>
+            <strong>HTML5 & CSS3:</strong> The building blocks of web pages
+          </li>
+          <li>
+            <strong>JavaScript (ES6+):</strong> The programming language of the
+            web
+          </li>
+          <li>
+            <strong>React.js/Vue.js/Angular:</strong> Popular JavaScript
+            frameworks
+          </li>
+          <li>
+            <strong>Responsive Design:</strong> Creating sites that work on all
+            devices
+          </li>
+          <li>
+            <strong>CSS Preprocessors:</strong> Sass or Less for more
+            maintainable CSS
+          </li>
+        </ul>
+
+        <h3>Back-End Technologies</h3>
+        <p>
+          The back-end handles business logic, database interactions, and server
+          configuration:
+        </p>
+        <ul>
+          <li>
+            <strong>Node.js/Python/Java/Ruby/PHP:</strong> Server-side
+            programming languages
+          </li>
+          <li>
+            <strong>Express.js/Django/Spring/Rails/Laravel:</strong> Back-end
+            frameworks
+          </li>
+          <li>
+            <strong>RESTful APIs/GraphQL:</strong> Creating and consuming APIs
+          </li>
+          <li>
+            <strong>Authentication & Authorization:</strong> JWT, OAuth,
+            sessions
+          </li>
+        </ul>
+
+        <h3>Database Management</h3>
+        <p>Full-stack developers need to work with databases:</p>
+        <ul>
+          <li><strong>SQL Databases:</strong> PostgreSQL, MySQL, SQL Server</li>
+          <li>
+            <strong>NoSQL Databases:</strong> MongoDB, Firebase, Cassandra
+          </li>
+          <li><strong>ORM/ODM:</strong> Sequelize, Mongoose, TypeORM</li>
+        </ul>
+
+        <h3>DevOps & Deployment</h3>
+        <p>Modern full-stack developers should understand:</p>
+        <ul>
+          <li><strong>Git & GitHub/GitLab:</strong> Version control</li>
+          <li><strong>Docker & Kubernetes:</strong> Containerization</li>
+          <li>
+            <strong>CI/CD Pipelines:</strong> Automated testing and deployment
+          </li>
+          <li><strong>Cloud Platforms:</strong> AWS, Azure, Google Cloud</li>
+        </ul>
+
+        <h2>Learning Path to Become a Full-Stack Developer</h2>
+
+        <h3>1. Master the Fundamentals</h3>
+        <p>
+          Start with HTML, CSS, and JavaScript. Build simple static websites
+          before moving to dynamic applications.
+        </p>
+
+        <h3>2. Choose a Front-End Framework</h3>
+        <p>
+          React.js is currently the most popular choice, but Vue.js and Angular
+          are also excellent options.
+        </p>
+
+        <h3>3. Learn a Back-End Language</h3>
+        <p>
+          Node.js (JavaScript) is great for beginners since you can use the same
+          language on both ends. Python (Django/Flask) is another
+          beginner-friendly option.
+        </p>
+
+        <h3>4. Understand Databases</h3>
+        <p>
+          Start with a relational database like PostgreSQL, then explore NoSQL
+          options like MongoDB.
+        </p>
+
+        <h3>5. Build Full-Stack Projects</h3>
+        <p>
+          Combine all your knowledge to create complete applications. Some
+          project ideas:
+        </p>
+        <ul>
+          <li>Task management app</li>
+          <li>E-commerce site</li>
+          <li>Social media dashboard</li>
+          <li>Blog platform with user authentication</li>
+        </ul>
+
+        <h3>6. Learn Deployment and DevOps</h3>
+        <p>
+          Deploy your projects using platforms like Heroku, Netlify, or Vercel.
+          Learn basic Linux commands and server management.
+        </p>
+
+        <div class="highlight-box">
+          <p>
+            <strong>Learning Tip:</strong> Focus on understanding concepts
+            rather than memorizing syntax. The ability to learn and adapt is
+            more valuable than any specific technology.
+          </p>
+        </div>
+
+        <h2>2023 Full-Stack Developer Roadmap</h2>
+        <p>Here's a suggested learning timeline:</p>
+
+        <h3>Months 1-3: Front-End Foundations</h3>
+        <ul>
+          <li>HTML5 semantic markup</li>
+          <li>CSS3 with Flexbox and Grid</li>
+          <li>JavaScript fundamentals (ES6+)</li>
+          <li>Basic DOM manipulation</li>
+        </ul>
+
+        <h3>Months 4-6: Front-End Framework</h3>
+        <ul>
+          <li>React.js or Vue.js</li>
+          <li>State management (Redux/Vuex)</li>
+          <li>Component-based architecture</li>
+          <li>API consumption with Axios/Fetch</li>
+        </ul>
+
+        <h3>Months 7-9: Back-End Development</h3>
+        <ul>
+          <li>Node.js with Express.js</li>
+          <li>RESTful API design</li>
+          <li>Database integration</li>
+          <li>Authentication systems</li>
+        </ul>
+
+        <h3>Months 10-12: Advanced Topics</h3>
+        <ul>
+          <li>TypeScript</li>
+          <li>GraphQL</li>
+          <li>Testing (Jest, Mocha)</li>
+          <li>Deployment and DevOps</li>
+        </ul>
+
+        <h2>Sample Full-Stack Application Code</h2>
+        <p>
+          Here's a simple Express.js server with React front-end integration:
+        </p>
+
+        <div class="code-block">
+          <pre><code>// Backend (server.js)
 const express = require('express');
 const app = express();
 const PORT = 5000;
@@ -718,201 +831,271 @@ function App() {
 }
 
 export default App;</code></pre>
-            </div>
-            
-            <h2>Career Opportunities for Full-Stack Developers</h2>
-            <p>Full-stack developers can pursue various career paths:</p>
-            <ul>
-                <li><strong>Web Developer:</strong> Build and maintain websites and web applications</li>
-                <li><strong>Software Engineer:</strong> Work on complex software systems</li>
-                <li><strong>Freelance Developer:</strong> Take on projects for multiple clients</li>
-                <li><strong>Technical Lead:</strong> Oversee development teams</li>
-                <li><strong>Startup Founder:</strong> Build your own products</li>
-            </ul>
-            
-            <h2>Staying Relevant in 2023 and Beyond</h2>
-            <p>To maintain your edge as a full-stack developer:</p>
-            <ul>
-                <li>Follow industry blogs and newsletters</li>
-                <li>Contribute to open-source projects</li>
-                <li>Attend tech conferences and meetups</li>
-                <li>Experiment with new technologies</li>
-                <li>Focus on problem-solving skills</li>
-            </ul>
-            
-            <div class="author-card">
-                <img src="Ali.png" alt="Ali Khan" class="author-img">
-                <div class="author-info">
-                    <h4>Mr.Ali</h4>
-                    <p class="author-title">Senior Full-Stack Developer & Tech Educator</p>
-                    <p class="author-bio">Ali has over 8 years of experience building web applications for startups and Fortune 500 companies. He's passionate about helping aspiring developers launch their tech careers.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
         </div>
+
+        <h2>Career Opportunities for Full-Stack Developers</h2>
+        <p>Full-stack developers can pursue various career paths:</p>
+        <ul>
+          <li>
+            <strong>Web Developer:</strong> Build and maintain websites and web
+            applications
+          </li>
+          <li>
+            <strong>Software Engineer:</strong> Work on complex software systems
+          </li>
+          <li>
+            <strong>Freelance Developer:</strong> Take on projects for multiple
+            clients
+          </li>
+          <li><strong>Technical Lead:</strong> Oversee development teams</li>
+          <li><strong>Startup Founder:</strong> Build your own products</li>
+        </ul>
+
+        <h2>Staying Relevant in 2023 and Beyond</h2>
+        <p>To maintain your edge as a full-stack developer:</p>
+        <ul>
+          <li>Follow industry blogs and newsletters</li>
+          <li>Contribute to open-source projects</li>
+          <li>Attend tech conferences and meetups</li>
+          <li>Experiment with new technologies</li>
+          <li>Focus on problem-solving skills</li>
+        </ul>
+
+        <div class="author-card">
+          <img src="Ali.png" alt="Ali Khan" class="author-img" />
+          <div class="author-info">
+            <h4>Mr.Ali</h4>
+            <p class="author-title">
+              Senior Full-Stack Developer & Tech Educator
+            </p>
+            <p class="author-bio">
+              Ali has over 8 years of experience building web applications for
+              startups and Fortune 500 companies. He's passionate about helping
+              aspiring developers launch their tech careers.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Related Posts -->
     <section class="related-posts">
-        <div class="container">
-            <h2 class="section-title">You Might Also Like</h2>
-            <div class="posts-grid">
-                <article class="post-card">
-                    <div class="post-card-img">
-                        <img src="java-scrippt-blog.png" alt="JavaScript" loading="lazy">
-                    </div>
-                    <div class="post-card-content">
-                        <div class="post-card-meta">
-                            <span>Technology</span>
-                            <span>May 15, 2023</span>
-                        </div>
-                        <h3 class="post-card-title">Mastering Modern JavaScript: ES6+ Features You Should Know</h3>
-                        <p class="post-card-excerpt">Explore the powerful JavaScript features introduced in ES6 and beyond that every developer should master.</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="post-card">
-                    <div class="post-card-img">
-                        <img src="react blog photo.png" alt="React" loading="lazy">
-                    </div>
-                    <div class="post-card-content">
-                        <div class="post-card-meta">
-                            <span>Technology</span>
-                            <span>April 28, 2023</span>
-                        </div>
-                        <h3 class="post-card-title">React Hooks: Revolutionizing Functional Components</h3>
-                        <p class="post-card-excerpt">Learn how React Hooks have transformed the way we write components and manage state in React applications.</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="post-card">
-                    <div class="post-card-img">
-                        <img src="carrer blog.jpg" alt="Career" loading="lazy">
-                    </div>
-                    <div class="post-card-content">
-                        <div class="post-card-meta">
-                            <span>Career</span>
-                            <span>June 5, 2023</span>
-                        </div>
-                        <h3 class="post-card-title">How to Build an Impressive Developer Portfolio in 2023</h3>
-                        <p class="post-card-excerpt">Essential tips for creating a portfolio that will help you stand out in the competitive tech job market.</p>
-                        <a href="#" class="btn">Read More</a>
-                    </div>
-                </article>
+      <div class="container">
+        <h2 class="section-title">You Might Also Like</h2>
+        <div class="posts-grid">
+          <article class="post-card">
+            <div class="post-card-img">
+              <img
+                src="java-scrippt-blog.png"
+                alt="JavaScript"
+                loading="lazy"
+              />
             </div>
+            <div class="post-card-content">
+              <div class="post-card-meta">
+                <span>Technology</span>
+                <span>May 15, 2023</span>
+              </div>
+              <h3 class="post-card-title">
+                Mastering Modern JavaScript: ES6+ Features You Should Know
+              </h3>
+              <p class="post-card-excerpt">
+                Explore the powerful JavaScript features introduced in ES6 and
+                beyond that every developer should master.
+              </p>
+              <a href="#" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-img">
+              <img src="react blog photo.png" alt="React" loading="lazy" />
+            </div>
+            <div class="post-card-content">
+              <div class="post-card-meta">
+                <span>Technology</span>
+                <span>April 28, 2023</span>
+              </div>
+              <h3 class="post-card-title">
+                React Hooks: Revolutionizing Functional Components
+              </h3>
+              <p class="post-card-excerpt">
+                Learn how React Hooks have transformed the way we write
+                components and manage state in React applications.
+              </p>
+              <a href="#" class="btn">Read More</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <div class="post-card-img">
+              <img src="carrer blog.jpg" alt="Career" loading="lazy" />
+            </div>
+            <div class="post-card-content">
+              <div class="post-card-meta">
+                <span>Career</span>
+                <span>June 5, 2023</span>
+              </div>
+              <h3 class="post-card-title">
+                How to Build an Impressive Developer Portfolio in 2023
+              </h3>
+              <p class="post-card-excerpt">
+                Essential tips for creating a portfolio that will help you stand
+                out in the competitive tech job market.
+              </p>
+              <a href="#" class="btn">Read More</a>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="Ali's Guide Hub Logo">
-                        <span>Ali's Guide Hub</span>
-                    </div>
-                    <div class="footer-about">
-                        <p>Your trusted source for expert guides on technology, health, finance, and lifestyle.</p>
-                    </div>
-                    <div class="footer-social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                        <li><a href="terms and conditions.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
-                        <li><a href="terms and conditions.html"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Pakistan, Knowledge City</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:info@aliguidehub.com">info@aliguidehub.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <a href="tel:+1234567890">+44 7543 945859</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="logo.png"
+                alt="Guide Hubz
+
+ Logo"
+              />
+              <span>Guide Hubz </span>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Ali's Guide Hub. All rights reserved.</p>
+            <div class="footer-about">
+              <p>
+                Your trusted source for expert guides on technology, health,
+                finance, and lifestyle.
+              </p>
             </div>
+            <div class="footer-social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="blog.html"
+                  ><i class="fas fa-chevron-right"></i> Blog</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="fas fa-chevron-right"></i> About</a
+                >
+              </li>
+              <li>
+                <a href="contactus.html"
+                  ><i class="fas fa-chevron-right"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="privacy-policy.html"
+                  ><i class="fas fa-chevron-right"></i> Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="terms and conditions.html"
+                  ><i class="fas fa-chevron-right"></i> Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="terms and conditions.html"
+                  ><i class="fas fa-chevron-right"></i> Cookie Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Pakistan, Knowledge City</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <a href="mailto:info@aliguidehub.com">info@aliguidehub.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <a href="tel:+1234567890">+44 7543 945859</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2023 Guide Hubz . All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

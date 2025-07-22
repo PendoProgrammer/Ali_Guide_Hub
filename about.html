@@ -1,792 +1,915 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Ali's Guide Hub</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Guide Hubz</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* CSS Reset & Base Styles */
-        :root {
-            --primary-color: #4F46E5;
-            --secondary-color: #4338CA;
-            --accent-color: #EC4899;
-            --light-color: #F9FAFB;
-            --dark-color: #111827;
-            --gray-color: #6B7280;
-            --max-width: 1200px;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            font-size: 2.2rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 80px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 5px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        .logo img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-        
-        .nav-links a {
-            color: var(--dark-color);
-            font-weight: 600;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-        
-        /* About Page Specific Styles */
-        .about-hero {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-            padding: 5rem 0;
-            text-align: center;
-        }
-        
-        .about-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--gray-color);
-        }
-        
-        .about-section {
-            padding: 5rem 0;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-            background: white;
-            padding: 3rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            border: 1px solid #E5E7EB;
-        }
-        
-        .about-img {
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .about-text h2 {
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .about-features {
-            margin-top: 3rem;
-        }
-        
-        .feature-item {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(79, 70, 229, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        
-        .mission-vision {
-            padding: 5rem 0;
-            background: white;
-        }
-        
-        .mv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .mv-card {
-            background: var(--light-color);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .mv-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .mv-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .team-section {
-            padding: 5rem 0;
-            background: var(--light-color);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-        
-        .team-card {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: var(--transition);
-        }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .team-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-        
-        .team-info {
-            padding: 2rem;
-        }
-        
-        .team-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-info p {
-            color: var(--gray-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .team-social {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .team-social a {
-            width: 35px;
-            height: 35px;
-            background: #F3F4F6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark-color);
-            transition: var(--transition);
-        }
-        
-        .team-social a:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .stats-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .stat-item h2 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Footer Styles */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 5rem 0 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 0.8rem;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 3px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .footer-logo img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .footer-about p {
-            color: #D1D5DB;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: #D1D5DB;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #9CA3AF;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 90px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 2rem;
-                padding-top: 3rem;
-                transition: var(--transition);
-                z-index: 99;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .about-hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-        ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+      /* CSS Reset & Base Styles */
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #4338ca;
+        --accent-color: #ec4899;
+        --light-color: #f9fafb;
+        --dark-color: #111827;
+        --gray-color: #6b7280;
+        --max-width: 1200px;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
-  
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 600;
+        box-shadow: var(--box-shadow);
+      }
+
+      .btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1rem;
+        font-size: 2.2rem;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 80px;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 5px;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark-color);
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        color: var(--dark-color);
+        font-weight: 600;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-links a.active {
+        color: var(--primary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--dark-color);
+      }
+
+      /* About Page Specific Styles */
+      .about-hero {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.1) 0%,
+          rgba(236, 72, 153, 0.1) 100%
+        );
+        padding: 5rem 0;
+        text-align: center;
+      }
+
+      .about-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: var(--gray-color);
+      }
+
+      .about-section {
+        padding: 5rem 0;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-top: 3rem;
+        background: white;
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        border: 1px solid #e5e7eb;
+      }
+
+      .about-img {
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .about-text h2 {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .about-features {
+        margin-top: 3rem;
+      }
+
+      .feature-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(79, 70, 229, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .mission-vision {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .mv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+      }
+
+      .mv-card {
+        background: var(--light-color);
+        padding: 2.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .mv-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .mv-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .team-section {
+        padding: 5rem 0;
+        background: var(--light-color);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+
+      .team-card {
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .team-info {
+        padding: 2rem;
+      }
+
+      .team-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .team-info p {
+        color: var(--gray-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .team-social a {
+        width: 35px;
+        height: 35px;
+        background: #f3f4f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark-color);
+        transition: var(--transition);
+      }
+
+      .team-social a:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .stats-section {
+        padding: 5rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        text-align: center;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .stat-item h2 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-item p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      /* Footer Styles */
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 5rem 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 3px;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .footer-about p {
+        color: #d1d5db;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .footer-links li {
+        margin-bottom: 1rem;
+      }
+
+      .footer-links a {
+        color: #d1d5db;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: var(--transition);
+        font-size: 1.2rem;
+      }
+
+      .social-links a:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #9ca3af;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 90px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 90px);
+          background: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 2rem;
+          padding-top: 3rem;
+          transition: var(--transition);
+          z-index: 99;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .about-hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="logo.png" alt="Ali's Guide Hub Logo">
-                    <span>Ali's Guide Hub</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="blog.html"><i class="fas fa-book-open"></i> Blog</a></li>
-                    <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <img
+              src="logo.png"
+              alt="Guide Hubz
+
+ Logo"
+            />
+            <span>Guide Hubz </span>
+          </a>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="blog.html"><i class="fas fa-book-open"></i> Blog</a>
+            </li>
+            <li>
+              <a href="about.html" class="active"
+                ><i class="fas fa-user"></i> About</a
+              >
+            </li>
+            <li>
+              <a href="contactus.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <!-- About Hero Section -->
     <section class="about-hero">
-        <div class="container">
-            <h1 class="fade-in">About Ali's Guide Hub</h1>
-            <p class="fade-in delay-1">Your trusted source for expert guides on technology, health, finance, and lifestyle since 2020.</p>
-        </div>
+      <div class="container">
+        <h1 class="fade-in">About Guide Hubz</h1>
+        <p class="fade-in delay-1">
+          Your trusted source for expert guides on technology, health, finance,
+          and lifestyle since 2020.
+        </p>
+      </div>
     </section>
 
     <!-- Our Story Section -->
     <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-img-container">
-                    <img src="story.jpeg" alt="Our Workspace" class="about-img" loading="lazy" style="height: 900px;">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-img-container">
+            <img
+              src="story.jpeg"
+              alt="Our Workspace"
+              class="about-img"
+              loading="lazy"
+              style="height: 900px"
+            />
+          </div>
+          <div class="about-text">
+            <h2>Our Story</h2>
+            <p>
+              Founded in 2020 by Ali Akber, Guide Hubz began as a personal blog
+              sharing technology tips and tricks. What started as a passion
+              project quickly grew into a comprehensive resource center with
+              thousands of readers worldwide.
+            </p>
+            <p>
+              Our mission is simple: to provide practical, well-researched, and
+              easy-to-understand guides that help people navigate the
+              complexities of modern life. Whether you're looking to improve
+              your tech skills, enhance your health, or better manage your
+              finances, we've got you covered.
+            </p>
+            <p>
+              Today, our team of expert writers and researchers work tirelessly
+              to bring you the most up-to-date and actionable content across
+              multiple categories.
+            </p>
+
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-check-circle"></i>
                 </div>
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2020 by Ali Akber, Ali's Guide Hub began as a personal blog sharing technology tips and tricks. What started as a passion project quickly grew into a comprehensive resource center with thousands of readers worldwide.</p>
-                    <p>Our mission is simple: to provide practical, well-researched, and easy-to-understand guides that help people navigate the complexities of modern life. Whether you're looking to improve your tech skills, enhance your health, or better manage your finances, we've got you covered.</p>
-                    <p>Today, our team of expert writers and researchers work tirelessly to bring you the most up-to-date and actionable content across multiple categories.</p>
-                    
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Quality Content</h3>
-                                <p>Every article goes through rigorous research and fact-checking before publication.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Community Focused</h3>
-                                <p>We listen to our readers and create content that addresses their real needs.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Continuous Growth</h3>
-                                <p>We regularly update our content to ensure it remains relevant and valuable.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="feature-content">
+                  <h3>Quality Content</h3>
+                  <p>
+                    Every article goes through rigorous research and
+                    fact-checking before publication.
+                  </p>
                 </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Community Focused</h3>
+                  <p>
+                    We listen to our readers and create content that addresses
+                    their real needs.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Continuous Growth</h3>
+                  <p>
+                    We regularly update our content to ensure it remains
+                    relevant and valuable.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Mission & Vision Section -->
     <section class="mission-vision">
-        <div class="container">
-            <h2 class="section-title text-center">Our Mission & Vision</h2>
-            <div class="mv-grid">
-                <div class="mv-card fade-in">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Mission</h3>
-                    <p>To empower individuals with knowledge and practical guidance that helps them make informed decisions and improve their quality of life.</p>
-                </div>
-                <div class="mv-card fade-in delay-1">
-                    <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Vision</h3>
-                    <p>To become the most trusted online resource for practical guides across all aspects of modern living.</p>
-                </div>
-                <div class="mv-card fade-in delay-2">
-                    <div class="mv-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3>Values</h3>
-                    <p>Integrity, accuracy, accessibility, and a genuine desire to help our readers succeed.</p>
-                </div>
+      <div class="container">
+        <h2 class="section-title text-center">Our Mission & Vision</h2>
+        <div class="mv-grid">
+          <div class="mv-card fade-in">
+            <div class="mv-icon">
+              <i class="fas fa-bullseye"></i>
             </div>
+            <h3>Mission</h3>
+            <p>
+              To empower individuals with knowledge and practical guidance that
+              helps them make informed decisions and improve their quality of
+              life.
+            </p>
+          </div>
+          <div class="mv-card fade-in delay-1">
+            <div class="mv-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Vision</h3>
+            <p>
+              To become the most trusted online resource for practical guides
+              across all aspects of modern living.
+            </p>
+          </div>
+          <div class="mv-card fade-in delay-2">
+            <div class="mv-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3>Values</h3>
+            <p>
+              Integrity, accuracy, accessibility, and a genuine desire to help
+              our readers succeed.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-
 
     <!-- Stats Section -->
     <section class="stats-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">By The Numbers</h2>
-            <div class="stats-grid">
-                <div class="stat-item fade-in">
-                    <h2>500+</h2>
-                    <p>Published Guides</p>
-                </div>
-                <div class="stat-item fade-in delay-1">
-                    <h2>100K+</h2>
-                    <p>Monthly Readers</p>
-                </div>
-                <div class="stat-item fade-in delay-2">
-                    <h2>10+</h2>
-                    <p>Expert Contributors</p>
-                </div>
-                <div class="stat-item fade-in">
-                    <h2>3</h2>
-                    <p>Years of Service</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title" style="color: white">By The Numbers</h2>
+        <div class="stats-grid">
+          <div class="stat-item fade-in">
+            <h2>500+</h2>
+            <p>Published Guides</p>
+          </div>
+          <div class="stat-item fade-in delay-1">
+            <h2>100K+</h2>
+            <p>Monthly Readers</p>
+          </div>
+          <div class="stat-item fade-in delay-2">
+            <h2>10+</h2>
+            <p>Expert Contributors</p>
+          </div>
+          <div class="stat-item fade-in">
+            <h2>3</h2>
+            <p>Years of Service</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="Ali's Guide Hub Logo">
-                        <span>Ali's Guide Hub</span>
-                    </div>
-                    <div class="footer-about">
-                        <p>Your trusted source for expert guides on technology, health, finance, and lifestyle.</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="blog.html" target="_blank"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Technology</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Health</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Finance</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Lifestyle</a></li>
-                    </ul>
-                </div>
-               <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Pakistan, Knowledge City</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:info@aliguidehub.com">info@aliguidehub.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <a href="tel:+1234567890">+44 7543 945859</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="logo.png"
+                alt="Guide Hubz
+
+ Logo"
+              />
+              <span>Guide Hubz </span>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Ali's Guide Hub. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms and conditions.html">Terms of Service</a></p>
+            <div class="footer-about">
+              <p>
+                Your trusted source for expert guides on technology, health,
+                finance, and lifestyle.
+              </p>
             </div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="blog.html" target="_blank"
+                  ><i class="fas fa-chevron-right"></i> Blog</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="fas fa-chevron-right"></i> About</a
+                >
+              </li>
+              <li>
+                <a href="contactus.html"
+                  ><i class="fas fa-chevron-right"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Technology</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Health</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Finance</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> Lifestyle</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Pakistan, Knowledge City</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <a href="mailto:info@aliguidehub.com">info@aliguidehub.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <a href="tel:+1234567890">+44 7543 945859</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="copyright">
+          <p>
+            &copy; 2023 Guide Hubz . All rights reserved. |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="terms and conditions.html">Terms of Service</a>
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
 
-        // Animation on scroll
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.fade-in');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Animation on scroll
+      const animateOnScroll = function () {
+        const elements = document.querySelectorAll(".fade-in");
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (elementPosition < windowHeight - 100) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("load", animateOnScroll);
     </script>
-</body>
+  </body>
 </html>

@@ -1,924 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Ali's Guide Hub</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Guide Hubz</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* CSS Reset & Base Styles */
-        :root {
-            --primary-color: #4F46E5;
-            --secondary-color: #4338CA;
-            --accent-color: #EC4899;
-            --light-color: #F9FAFB;
-            --dark-color: #111827;
-            --gray-color: #6B7280;
-            --max-width: 1200px;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--secondary-color);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: var(--border-radius);
-        }
-        
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 600;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: var(--box-shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-        
-        .logo img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-        
-        .nav-links a {
-            color: var(--dark-color);
-            font-weight: 600;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-        
-        /* Blog Hero Section */
-        .blog-hero {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-            padding: 5rem 0;
-            text-align: center;
-        }
-        
-        .blog-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--gray-color);
-        }
-        
-        /* Blog Content */
-        .blog-section {
-            padding: 5rem 0;
-        }
-        
-        .blog-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .blog-card {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border: 1px solid #E5E7EB;
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .blog-img {
-            height: 220px;
-            overflow: hidden;
-        }
-        
-        .blog-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .blog-card:hover .blog-img img {
-            transform: scale(1.05);
-        }
-        
-        .blog-content {
-            padding: 1.8rem;
-        }
-        
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--gray-color);
-        }
-        
-        .blog-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        
-        .blog-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .blog-excerpt {
-            color: var(--gray-color);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .blog-category {
-            display: inline-block;
-            background: rgba(79, 70, 229, 0.1);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-        
-        .page-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: white;
-            color: var(--dark-color);
-            font-weight: 600;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-        
-        .page-link.active, .page-link:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-bottom: 2rem;
-            border: 1px solid #E5E7EB;
-        }
-        
-        .sidebar-title {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.8rem;
-        }
-        
-        .sidebar-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 3px;
-        }
-        
-        .categories-list li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .categories-list a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--dark-color);
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed #E5E7EB;
-        }
-        
-        .categories-list a:hover {
-            color: var(--primary-color);
-        }
-        
-        .categories-list span {
-            background: #F3F4F6;
-            padding: 0.3rem 0.6rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-        }
-        
-        .popular-posts .post {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px dashed #E5E7EB;
-        }
-        
-        .popular-posts .post-img {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        
-        .popular-posts .post-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .popular-posts .post-title {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .popular-posts .post-date {
-            font-size: 0.8rem;
-            color: var(--gray-color);
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .tag {
-            display: inline-block;
-            background: #F3F4F6;
-            color: var(--dark-color);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            transition: var(--transition);
-        }
-        
-        .tag:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .blog-layout {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 3rem;
-        }
-        
-        /* Newsletter */
-        .newsletter {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            color: white;
-            margin-bottom: 2rem;
-        }
-        
-        .newsletter h3 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
-        .newsletter p {
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-        
-        .newsletter-form {
-            display: flex;
-        }
-        
-        .newsletter-input {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: none;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            font-family: inherit;
-        }
-        
-        .newsletter-btn {
-            background: var(--dark-color);
-            color: white;
-            border: none;
-            padding: 0 1.5rem;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .newsletter-btn:hover {
-            background: black;
-        }
-        
-        /* Footer Styles */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 5rem 0 2rem;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 0.8rem;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 3px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .footer-logo img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .footer-about p {
-            color: #D1D5DB;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: #D1D5DB;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #9CA3AF;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .nav-links {
-                position: fixed;
-                top: 90px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 90px);
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 2rem;
-                padding-top: 3rem;
-                transition: var(--transition);
-                z-index: 99;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .blog-layout {
-                grid-template-columns: 1fr;
-            }
-            
-            .blog-container {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .blog-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-        ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+      /* CSS Reset & Base Styles */
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #4338ca;
+        --accent-color: #ec4899;
+        --light-color: #f9fafb;
+        --dark-color: #111827;
+        --gray-color: #6b7280;
+        --max-width: 1200px;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--border-radius);
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        font-weight: 600;
+        box-shadow: var(--box-shadow);
+      }
+
+      .btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark-color);
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        color: var(--dark-color);
+        font-weight: 600;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-links a.active {
+        color: var(--primary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--dark-color);
+      }
+
+      /* Blog Hero Section */
+      .blog-hero {
+        background: linear-gradient(
+          135deg,
+          rgba(79, 70, 229, 0.1) 0%,
+          rgba(236, 72, 153, 0.1) 100%
+        );
+        padding: 5rem 0;
+        text-align: center;
+      }
+
+      .blog-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .blog-hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: var(--gray-color);
+      }
+
+      /* Blog Content */
+      .blog-section {
+        padding: 5rem 0;
+      }
+
+      .blog-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+        border: 1px solid #e5e7eb;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .blog-img {
+        height: 220px;
+        overflow: hidden;
+      }
+
+      .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .blog-card:hover .blog-img img {
+        transform: scale(1.05);
+      }
+
+      .blog-content {
+        padding: 1.8rem;
+      }
+
+      .blog-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--gray-color);
+      }
+
+      .blog-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .blog-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .blog-excerpt {
+        color: var(--gray-color);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .blog-category {
+        display: inline-block;
+        background: rgba(79, 70, 229, 0.1);
+        color: var(--primary-color);
+        padding: 0.3rem 0.8rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+
+      .page-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: white;
+        color: var(--dark-color);
+        font-weight: 600;
+        box-shadow: var(--box-shadow);
+        transition: var(--transition);
+      }
+
+      .page-link.active,
+      .page-link:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .sidebar {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        margin-bottom: 2rem;
+        border: 1px solid #e5e7eb;
+      }
+
+      .sidebar-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .sidebar-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 3px;
+      }
+
+      .categories-list li {
+        margin-bottom: 0.8rem;
+      }
+
+      .categories-list a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--dark-color);
+        padding: 0.5rem 0;
+        border-bottom: 1px dashed #e5e7eb;
+      }
+
+      .categories-list a:hover {
+        color: var(--primary-color);
+      }
+
+      .categories-list span {
+        background: #f3f4f6;
+        padding: 0.3rem 0.6rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+      }
+
+      .popular-posts .post {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 1px dashed #e5e7eb;
+      }
+
+      .popular-posts .post-img {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .popular-posts .post-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .popular-posts .post-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .popular-posts .post-date {
+        font-size: 0.8rem;
+        color: var(--gray-color);
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: #f3f4f6;
+        color: var(--dark-color);
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        transition: var(--transition);
+      }
+
+      .tag:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .blog-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 3rem;
+      }
+
+      /* Newsletter */
+      .newsletter {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--accent-color) 100%
+        );
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        color: white;
+        margin-bottom: 2rem;
+      }
+
+      .newsletter h3 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .newsletter p {
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      .newsletter-form {
+        display: flex;
+      }
+
+      .newsletter-input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        font-family: inherit;
+      }
+
+      .newsletter-btn {
+        background: var(--dark-color);
+        color: white;
+        border: none;
+        padding: 0 1.5rem;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-btn:hover {
+        background: black;
+      }
+
+      /* Footer Styles */
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 5rem 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        position: relative;
+        padding-bottom: 0.8rem;
+      }
+
+      .footer-column h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        border-radius: 3px;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .footer-logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .footer-about p {
+        color: #d1d5db;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .footer-links li {
+        margin-bottom: 1rem;
+      }
+
+      .footer-links a {
+        color: #d1d5db;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition);
+      }
+
+      .footer-links a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: var(--transition);
+        font-size: 1.2rem;
+      }
+
+      .social-links a:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #9ca3af;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .nav-links {
+          position: fixed;
+          top: 90px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 90px);
+          background: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 2rem;
+          padding-top: 3rem;
+          transition: var(--transition);
+          z-index: 99;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .blog-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .blog-container {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .blog-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <img src="logo.png" alt="Ali's Guide Hub Logo">
-                    <span>Ali's Guide Hub</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="blog.html" class="active"><i class="fas fa-book-open"></i> Blog</a></li>
-                    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy</a></li>
-                </ul>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <img
+              src="logo.png"
+              alt="Guide Hubz
+
+ Logo"
+            />
+            <span>Guide Hubz </span>
+          </a>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="blog.html" class="active"
+                ><i class="fas fa-book-open"></i> Blog</a
+              >
+            </li>
+            <li>
+              <a href="about.html"><i class="fas fa-user"></i> About</a>
+            </li>
+            <li>
+              <a href="contactus.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+            <li>
+              <a href="privacy-policy.html"
+                ><i class="fas fa-shield-alt"></i> Privacy</a
+              >
+            </li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
     </header>
 
     <!-- Blog Hero Section -->
     <section class="blog-hero">
-        <div class="container">
-            <h1>Our Blog</h1>
-            <p>Discover the latest articles, guides, and tutorials on technology, health, finance, and lifestyle</p>
-        </div>
+      <div class="container">
+        <h1>Our Blog</h1>
+        <p>
+          Discover the latest articles, guides, and tutorials on technology,
+          health, finance, and lifestyle
+        </p>
+      </div>
     </section>
 
     <!-- Blog Content -->
     <section class="blog-section">
-        <div class="container">
-            <div class="blog-layout">
-                <main>
-                    <div class="blog-container">
-                        <!-- Blog Post 1 -->
-                        <article class="blog-card">
-                            <div class="blog-img">
-                                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tech Guide">
-                            </div>
-                            <div class="blog-content">
-                                <span class="blog-category">Technology</span>
-                                <h3 class="blog-title">The Complete Guide to Web Development in 2023</h3>
-                                <div class="blog-meta">
-                                    <span><i class="far fa-user"></i> Ali Khan</span>
-                                    <span><i class="far fa-calendar"></i> June 15, 2023</span>
-                                    <span><i class="far fa-eye"></i> 1.2K Views</span>
-                                </div>
-                                <p class="blog-excerpt">Learn the most in-demand web development skills and technologies that will dominate in 2023 and beyond.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </article>
-                        
-                        <!-- Blog Post 2 -->
-                        <article class="blog-card">
-                            <div class="blog-img">
-                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Health Guide">
-                            </div>
-                            <div class="blog-content">
-                                <span class="blog-category">Health</span>
-                                <h3 class="blog-title">10 Proven Ways to Boost Your Immune System Naturally</h3>
-                                <div class="blog-meta">
-                                    <span><i class="far fa-user"></i> Sara Ahmed</span>
-                                    <span><i class="far fa-calendar"></i> May 28, 2023</span>
-                                    <span><i class="far fa-eye"></i> 2.4K Views</span>
-                                </div>
-                                <p class="blog-excerpt">Discover science-backed methods to strengthen your immune system without relying on supplements.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </article>
-                        
-                        <!-- Blog Post 3 -->
-                        <article class="blog-card">
-                            <div class="blog-img">
-                                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Finance Guide">
-                            </div>
-                            <div class="blog-content">
-                                <span class="blog-category">Finance</span>
-                                <h3 class="blog-title">Smart Investment Strategies for Beginners</h3>
-                                <div class="blog-meta">
-                                    <span><i class="far fa-user"></i> Rizwan Malik</span>
-                                    <span><i class="far fa-calendar"></i> May 10, 2023</span>
-                                    <span><i class="far fa-eye"></i> 3.1K Views</span>
-                                </div>
-                                <p class="blog-excerpt">Learn how to start investing with small amounts and grow your wealth over time with these proven strategies.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </article>
-                        
-                        <!-- Blog Post 4 -->
-                        <article class="blog-card">
-                            <div class="blog-img">
-                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Lifestyle Guide">
-                            </div>
-                            <div class="blog-content">
-                                <span class="blog-category">Lifestyle</span>
-                                <h3 class="blog-title">Minimalism: Living With Less for a Happier Life</h3>
-                                <div class="blog-meta">
-                                    <span><i class="far fa-user"></i> Fatima Khan</span>
-                                    <span><i class="far fa-calendar"></i> April 22, 2023</span>
-                                    <span><i class="far fa-eye"></i> 1.8K Views</span>
-                                </div>
-                                <p class="blog-excerpt">How adopting a minimalist lifestyle can reduce stress and increase your overall happiness and productivity.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </article>
-                        
-                        <!-- Blog Post 5 -->
-                        <article class="blog-card">
-                            <div class="blog-img">
-                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tech Guide">
-                            </div>
-                            <div class="blog-content">
-                                <span class="blog-category">Technology</span>
-                                <h3 class="blog-title">Artificial Intelligence: What You Need to Know in 2023</h3>
-                                <div class="blog-meta">
-                                    <span><i class="far fa-user"></i> Ali Khan</span>
-                                    <span><i class="far fa-calendar"></i> April 15, 2023</span>
-                                    <span><i class="far fa-eye"></i> 4.5K Views</span>
-                                </div>
-                                <p class="blog-excerpt">The latest developments in AI and how they will impact various industries in the coming years.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </article>
-                        
-                        <!-- Blog Post 6 -->
-                        <article class="blog-card">
-                            <div class="blog-img">
-                                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Health Guide">
-                            </div>
-                            <div class="blog-content">
-                                <span class="blog-category">Health</span>
-                                <h3 class="blog-title">The Science of Intermittent Fasting: Benefits and Methods</h3>
-                                <div class="blog-meta">
-                                    <span><i class="far fa-user"></i> Sara Ahmed</span>
-                                    <span><i class="far fa-calendar"></i> March 30, 2023</span>
-                                    <span><i class="far fa-eye"></i> 3.7K Views</span>
-                                </div>
-                                <p class="blog-excerpt">Explore the health benefits of intermittent fasting and different approaches you can try.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </article>
-                    </div>
-                    
-                    <!-- Pagination -->
-                    <div class="pagination">
-                        <a href="#" class="page-link active">1</a>
-                        <a href="#" class="page-link">2</a>
-                        <a href="#" class="page-link">3</a>
-                        <a href="#" class="page-link">4</a>
-                        <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </main>
-                
-                <!-- Sidebar -->
-                <aside>
-                    <!-- Search Widget -->
-                    <div class="sidebar">
-                        <h3 class="sidebar-title">Search</h3>
-                        <form class="search-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <!-- Categories Widget -->
-                    <div class="sidebar">
-                        <h3 class="sidebar-title">Categories</h3>
-                        <ul class="categories-list">
-                            <li><a href="#">Technology <span>24</span></a></li>
-                            <li><a href="#">Health & Wellness <span>18</span></a></li>
-                            <li><a href="#">Finance <span>15</span></a></li>
-                            <li><a href="#">Lifestyle <span>12</span></a></li>
-                            <li><a href="#">Productivity <span>9</span></a></li>
-                            <li><a href="#">Travel <span>6</span></a></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Popular Posts Widget -->
-                    <div class="sidebar">
-                        <h3 class="sidebar-title">Popular Posts</h3>
-                        <div class="popular-posts">
-                            <div class="post">
-                                <div class="post-img">
-                                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Popular Post">
-                                </div>
-                                <div class="post-content">
-                                    <h4 class="post-title">The Complete Guide to Web Development</h4>
-                                    <span class="post-date">June 15, 2023</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-img">
-                                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Popular Post">
-                                </div>
-                                <div class="post-content">
-                                    <h4 class="post-title">Artificial Intelligence Guide</h4>
-                                    <span class="post-date">April 15, 2023</span>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="post-img">
-                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Popular Post">
-                                </div>
-                                <div class="post-content">
-                                    <h4 class="post-title">Boost Your Immune System</h4>
-                                    <span class="post-date">May 28, 2023</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Newsletter Widget -->
-                    <div class="newsletter">
-                        <h3>Subscribe to Newsletter</h3>
-                        <p>Get the latest articles and guides delivered straight to your inbox.</p>
-                        <form class="newsletter-form">
-                            <input type="email" class="newsletter-input" placeholder="Your Email">
-                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-                    
-                    <!-- Tags Widget -->
-                    <div class="sidebar">
-                        <h3 class="sidebar-title">Tags</h3>
-                        <div class="tags">
-                            <a href="#" class="tag">Web Dev</a>
-                            <a href="#" class="tag">AI</a>
-                            <a href="#" class="tag">Fitness</a>
-                            <a href="#" class="tag">Investing</a>
-                            <a href="#" class="tag">Travel</a>
-                            <a href="#" class="tag">Productivity</a>
-                            <a href="#" class="tag">Nutrition</a>
-                            <a href="#" class="tag">Finance</a>
-                            <a href="#" class="tag">Tech</a>
-                            <a href="#" class="tag">Lifestyle</a>
-                        </div>
-                    </div>
-                </aside>
+      <div class="container">
+        <div class="blog-layout">
+          <main>
+            <div class="blog-container">
+              <!-- Blog Post 1 -->
+              <article class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Tech Guide"
+                  />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-category">Technology</span>
+                  <h3 class="blog-title">
+                    The Complete Guide to Web Development in 2023
+                  </h3>
+                  <div class="blog-meta">
+                    <span><i class="far fa-user"></i> Ali Khan</span>
+                    <span><i class="far fa-calendar"></i> June 15, 2023</span>
+                    <span><i class="far fa-eye"></i> 1.2K Views</span>
+                  </div>
+                  <p class="blog-excerpt">
+                    Learn the most in-demand web development skills and
+                    technologies that will dominate in 2023 and beyond.
+                  </p>
+                  <a href="#" class="btn">Read More</a>
+                </div>
+              </article>
+
+              <!-- Blog Post 2 -->
+              <article class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Health Guide"
+                  />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-category">Health</span>
+                  <h3 class="blog-title">
+                    10 Proven Ways to Boost Your Immune System Naturally
+                  </h3>
+                  <div class="blog-meta">
+                    <span><i class="far fa-user"></i> Sara Ahmed</span>
+                    <span><i class="far fa-calendar"></i> May 28, 2023</span>
+                    <span><i class="far fa-eye"></i> 2.4K Views</span>
+                  </div>
+                  <p class="blog-excerpt">
+                    Discover science-backed methods to strengthen your immune
+                    system without relying on supplements.
+                  </p>
+                  <a href="#" class="btn">Read More</a>
+                </div>
+              </article>
+
+              <!-- Blog Post 3 -->
+              <article class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Finance Guide"
+                  />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-category">Finance</span>
+                  <h3 class="blog-title">
+                    Smart Investment Strategies for Beginners
+                  </h3>
+                  <div class="blog-meta">
+                    <span><i class="far fa-user"></i> Rizwan Malik</span>
+                    <span><i class="far fa-calendar"></i> May 10, 2023</span>
+                    <span><i class="far fa-eye"></i> 3.1K Views</span>
+                  </div>
+                  <p class="blog-excerpt">
+                    Learn how to start investing with small amounts and grow
+                    your wealth over time with these proven strategies.
+                  </p>
+                  <a href="#" class="btn">Read More</a>
+                </div>
+              </article>
+
+              <!-- Blog Post 4 -->
+              <article class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80"
+                    alt="Lifestyle Guide"
+                  />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-category">Lifestyle</span>
+                  <h3 class="blog-title">
+                    Minimalism: Living With Less for a Happier Life
+                  </h3>
+                  <div class="blog-meta">
+                    <span><i class="far fa-user"></i> Fatima Khan</span>
+                    <span><i class="far fa-calendar"></i> April 22, 2023</span>
+                    <span><i class="far fa-eye"></i> 1.8K Views</span>
+                  </div>
+                  <p class="blog-excerpt">
+                    How adopting a minimalist lifestyle can reduce stress and
+                    increase your overall happiness and productivity.
+                  </p>
+                  <a href="#" class="btn">Read More</a>
+                </div>
+              </article>
+
+              <!-- Blog Post 5 -->
+              <article class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Tech Guide"
+                  />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-category">Technology</span>
+                  <h3 class="blog-title">
+                    Artificial Intelligence: What You Need to Know in 2023
+                  </h3>
+                  <div class="blog-meta">
+                    <span><i class="far fa-user"></i> Ali Khan</span>
+                    <span><i class="far fa-calendar"></i> April 15, 2023</span>
+                    <span><i class="far fa-eye"></i> 4.5K Views</span>
+                  </div>
+                  <p class="blog-excerpt">
+                    The latest developments in AI and how they will impact
+                    various industries in the coming years.
+                  </p>
+                  <a href="#" class="btn">Read More</a>
+                </div>
+              </article>
+
+              <!-- Blog Post 6 -->
+              <article class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Health Guide"
+                  />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-category">Health</span>
+                  <h3 class="blog-title">
+                    The Science of Intermittent Fasting: Benefits and Methods
+                  </h3>
+                  <div class="blog-meta">
+                    <span><i class="far fa-user"></i> Sara Ahmed</span>
+                    <span><i class="far fa-calendar"></i> March 30, 2023</span>
+                    <span><i class="far fa-eye"></i> 3.7K Views</span>
+                  </div>
+                  <p class="blog-excerpt">
+                    Explore the health benefits of intermittent fasting and
+                    different approaches you can try.
+                  </p>
+                  <a href="#" class="btn">Read More</a>
+                </div>
+              </article>
             </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <a href="#" class="page-link active">1</a>
+              <a href="#" class="page-link">2</a>
+              <a href="#" class="page-link">3</a>
+              <a href="#" class="page-link">4</a>
+              <a href="#" class="page-link"
+                ><i class="fas fa-chevron-right"></i
+              ></a>
+            </div>
+          </main>
+
+          <!-- Sidebar -->
+          <aside>
+            <!-- Search Widget -->
+            <div class="sidebar">
+              <h3 class="sidebar-title">Search</h3>
+              <form class="search-form">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search..."
+                  />
+                  <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="sidebar">
+              <h3 class="sidebar-title">Categories</h3>
+              <ul class="categories-list">
+                <li>
+                  <a href="#">Technology <span>24</span></a>
+                </li>
+                <li>
+                  <a href="#">Health & Wellness <span>18</span></a>
+                </li>
+                <li>
+                  <a href="#">Finance <span>15</span></a>
+                </li>
+                <li>
+                  <a href="#">Lifestyle <span>12</span></a>
+                </li>
+                <li>
+                  <a href="#">Productivity <span>9</span></a>
+                </li>
+                <li>
+                  <a href="#">Travel <span>6</span></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Popular Posts Widget -->
+            <div class="sidebar">
+              <h3 class="sidebar-title">Popular Posts</h3>
+              <div class="popular-posts">
+                <div class="post">
+                  <div class="post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                      alt="Popular Post"
+                    />
+                  </div>
+                  <div class="post-content">
+                    <h4 class="post-title">
+                      The Complete Guide to Web Development
+                    </h4>
+                    <span class="post-date">June 15, 2023</span>
+                  </div>
+                </div>
+                <div class="post">
+                  <div class="post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                      alt="Popular Post"
+                    />
+                  </div>
+                  <div class="post-content">
+                    <h4 class="post-title">Artificial Intelligence Guide</h4>
+                    <span class="post-date">April 15, 2023</span>
+                  </div>
+                </div>
+                <div class="post">
+                  <div class="post-img">
+                    <img
+                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                      alt="Popular Post"
+                    />
+                  </div>
+                  <div class="post-content">
+                    <h4 class="post-title">Boost Your Immune System</h4>
+                    <span class="post-date">May 28, 2023</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Newsletter Widget -->
+            <div class="newsletter">
+              <h3>Subscribe to Newsletter</h3>
+              <p>
+                Get the latest articles and guides delivered straight to your
+                inbox.
+              </p>
+              <form class="newsletter-form">
+                <input
+                  type="email"
+                  class="newsletter-input"
+                  placeholder="Your Email"
+                />
+                <button type="submit" class="newsletter-btn">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+
+            <!-- Tags Widget -->
+            <div class="sidebar">
+              <h3 class="sidebar-title">Tags</h3>
+              <div class="tags">
+                <a href="#" class="tag">Web Dev</a>
+                <a href="#" class="tag">AI</a>
+                <a href="#" class="tag">Fitness</a>
+                <a href="#" class="tag">Investing</a>
+                <a href="#" class="tag">Travel</a>
+                <a href="#" class="tag">Productivity</a>
+                <a href="#" class="tag">Nutrition</a>
+                <a href="#" class="tag">Finance</a>
+                <a href="#" class="tag">Tech</a>
+                <a href="#" class="tag">Lifestyle</a>
+              </div>
+            </div>
+          </aside>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="Ali's Guide Hub Logo">
-                        <span>Ali's Guide Hub</span>
-                    </div>
-                    <div class="footer-about">
-                        <p>Your trusted source for expert guides on technology, health, finance, and lifestyle.</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="privacy-policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
-                        <li><a href="terms and conditions.html"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
-                        <li><a href="terms and conditions.html"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Location</h4>
-                                <p>Pakistan, Knowledge City</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:info@aliguidehub.com">info@aliguidehub.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <a href="tel:+1234567890">+44 7543 945859</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="logo.png"
+                alt="Guide Hubz
+
+ Logo"
+              />
+              <span>Guide Hubz </span>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Ali's Guide Hub. All rights reserved.</p>
+            <div class="footer-about">
+              <p>
+                Your trusted source for expert guides on technology, health,
+                finance, and lifestyle.
+              </p>
             </div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="blog.html"
+                  ><i class="fas fa-chevron-right"></i> Blog</a
+                >
+              </li>
+              <li>
+                <a href="about.html"
+                  ><i class="fas fa-chevron-right"></i> About</a
+                >
+              </li>
+              <li>
+                <a href="contactus.html"
+                  ><i class="fas fa-chevron-right"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="privacy-policy.html"
+                  ><i class="fas fa-chevron-right"></i> Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="terms and conditions.html"
+                  ><i class="fas fa-chevron-right"></i> Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="terms and conditions.html"
+                  ><i class="fas fa-chevron-right"></i> Cookie Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Pakistan, Knowledge City</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <a href="mailto:info@aliguidehub.com">info@aliguidehub.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <a href="tel:+1234567890">+44 7543 945859</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2023 Guide Hubz . All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
+      });
     </script>
-</body>
+  </body>
 </html>
