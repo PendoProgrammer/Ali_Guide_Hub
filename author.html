@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO Meta Tags -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="index, follow">
@@ -41,135 +40,131 @@
   </script>
   <!-- End Google Tag Manager -->
 
-  <!-- Structured Data for SEO (Author) -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ali Akber",
-      "url": "https://guidehubz.com/author.html",
-      "image": "https://guidehubz.com/author.webp",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61579041620370",
-        "https://www.instagram.com/mr.aliakber1/",
-        "https://github.com/PendoProgrammer"
-      ],
-      "jobTitle": "Founder & Chief Content Creator",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Guide Hubz"
-      },
-      "description": "Expert in Technology, Finance, and Lifestyle content creation."
-    }
-  </script>
-
   <style>
-    /* --- CSS: Responsive, SEO-Optimized, Accessibility --- */
-    :root {
-      --primary-color: #4f46e5;
-      --secondary-color: #4338ca;
-      --accent-color: #ec4899;
-      --light-color: #f9fafb;
-      --dark-color: #111827;
-      --gray-color: #6b7280;
-      --max-width: 1200px;
-      --border-radius: 12px;
-      --box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
-      --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden !important;
     }
-    *, *:before, *:after { box-sizing: border-box; }
     body {
       font-family: "Montserrat", Arial, Helvetica, sans-serif;
       line-height: 1.6;
-      color: var(--dark-color);
-      background: var(--light-color);
-      overflow-x: hidden;
+      color: #111827;
+      background: #f9fafb;
       min-width: 320px;
     }
-    a { text-decoration: none; color: var(--primary-color); transition: var(--transition); }
-    a:hover, a:focus { color: var(--secondary-color); outline: none; }
+    a { text-decoration: none; color: #4f46e5; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    a:hover, a:focus { color: #4338ca; outline: none;}
     img { max-width: 100%; height: auto; display: block; }
-    h1, h2, h3, h4 { font-family: "Playfair Display", serif; margin-bottom: 1rem; line-height: 1.2; }
+    h1, h2, h3, h4 { font-family: "Playfair Display", serif; margin-bottom: 1rem; line-height: 1.2;}
     ul { list-style: none; }
     /* Utility */
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
-    .text-gradient { background: linear-gradient(90deg,var(--primary-color),var(--accent-color)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
     .section-title { font-size: 2.2rem; margin-bottom: 2rem; position: relative; padding-bottom: 1rem; }
-    .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 80px; height: 5px; background: linear-gradient(90deg,var(--primary-color),var(--accent-color)); border-radius: 5px; }
+    .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 80px; height: 5px; background: linear-gradient(90deg,#4f46e5,#ec4899); border-radius: 5px;}
     /* Header */
-    header { background: #fff; box-shadow: var(--box-shadow); position: sticky; top: 0; z-index: 100; }
-    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; }
-    .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.8rem; font-weight: 700; color: var(--dark-color); }
-    .logo img { width: 40px; height: 40px; }
-    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-    .nav-links a { color: var(--dark-color); font-weight: 600; position: relative; display: flex; align-items: center; gap: 0.5rem; }
-    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 3px; background: linear-gradient(90deg,var(--primary-color),var(--accent-color)); transition: var(--transition);}
+    header { background: #fff; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0;}
+    .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.8rem; font-weight: 700; color: #111827;}
+    .logo img { width: 40px; height: 40px;}
+    .nav-links { display: flex; align-items: center; gap: 2.5rem;}
+    .nav-links a { color: #111827; font-weight: 600; position: relative; display: flex; align-items: center; gap: 0.5rem;}
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 3px; background: linear-gradient(90deg,#4f46e5,#ec4899); transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
     .nav-links a:hover::after { width: 100%; }
-    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--dark-color);}
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #111827;}
     /* Author Section */
     .author-header { background: linear-gradient(135deg,rgba(79,70,229,0.1) 0%,rgba(236,72,153,0.1) 100%); padding: 4rem 0 3rem; text-align: center;}
-    .author-header h1 { font-size: 2.8rem; }
+    .author-header h1 { font-size: 2.8rem;}
     .author-section { padding: 3rem 0; }
-    .author-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; background: #fff; padding: 2.5rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); border: 1px solid #e5e7eb;}
-    .author-img { border-radius: var(--border-radius); box-shadow: var(--box-shadow); object-fit: cover; height: auto; }
-    .author-info h2 { margin-bottom: 1.2rem; font-size: 2rem; color: var(--primary-color);}
-    .author-title { font-weight: 600; color: var(--primary-color); margin-bottom: 1rem;}
-    .author-bio { color: var(--gray-color); margin-bottom: 1rem;}
-    .author-contact { margin-top: 2rem; }
+    .author-container { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 3rem; 
+      align-items: center; 
+      background: #fff; 
+      padding: 2.5rem; 
+      border-radius: 12px; 
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05); 
+      border: 1px solid #e5e7eb;
+    }
+    .author-img-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .author-img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+      margin: 0 auto;
+      display: block;
+      background: #f9fafb;
+    }
+    .author-info h2 { margin-bottom: 1.2rem; font-size: 2rem; color: #4f46e5;}
+    .author-title { font-weight: 600; color: #4f46e5; margin-bottom: 1rem;}
+    .author-bio { color: #6b7280; margin-bottom: 1rem;}
+    .author-contact { margin-top: 2rem;}
     .contact-list { display: flex; flex-direction: column; gap: 1.2rem; }
     .contact-item { display: flex; align-items: center; gap: 1.2rem;}
-    .contact-icon { width: 44px; height: 44px; background: rgba(79,70,229,0.13); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.2rem;}
+    .contact-icon { width: 44px; height: 44px; background: rgba(79,70,229,0.13); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4f46e5; font-size: 1.2rem;}
     .contact-details h3 { font-size: 1rem; margin-bottom: 0.2rem;}
     .contact-details p,
-    .contact-details a { color: var(--gray-color); font-size: 0.95rem;}
+    .contact-details a { color: #6b7280; font-size: 0.95rem;}
     .social-links { display: flex; gap: 1rem; margin-top: 2rem;}
-    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(79,70,229,0.13); border-radius: 50%; color: var(--primary-color); font-size: 1.2rem; transition: var(--transition);}
-    .social-links a:hover, .social-links a:focus { background: var(--primary-color); color: #fff; transform: translateY(-2px);}
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(79,70,229,0.13); border-radius: 50%; color: #4f46e5; font-size: 1.2rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .social-links a:hover, .social-links a:focus { background: #4f46e5; color: #fff; transform: translateY(-2px);}
     /* Author Stats */
-    .author-stats { margin-top: 3rem; }
+    .author-stats { margin-top: 3rem;}
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 1.2rem; margin-top: 1.5rem;}
-    .stat-card { background: #fff; border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 1.5rem; text-align: center; border: 1px solid #e5e7eb; transition: var(--transition);}
+    .stat-card { background: #fff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05); padding: 1.5rem; text-align: center; border: 1px solid #e5e7eb; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
     .stat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 24px -5px rgba(0,0,0,0.13),0 10px 10px -5px rgba(0,0,0,0.04);}
-    .stat-number { font-size: 2.2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 0.3rem;}
-    .stat-label { color: var(--gray-color); font-size: 1rem;}
+    .stat-number { font-size: 2.2rem; font-weight: 700; color: #4f46e5; margin-bottom: 0.3rem;}
+    .stat-label { color: #6b7280; font-size: 1rem;}
     /* Footer */
-    footer { background: var(--dark-color); color: #fff; padding: 3rem 0 1.5rem;}
+    footer { background: #111827; color: #fff; padding: 3rem 0 1.5rem;}
     .footer-content { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 2rem; margin-bottom: 2rem;}
     .footer-column h3 { color: #fff; margin-bottom: 1.2rem; font-size: 1.15rem; position: relative; padding-bottom: 0.5rem;}
-    .footer-column h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 46px; height: 3px; background: linear-gradient(90deg,var(--primary-color),var(--accent-color)); border-radius: 3px;}
+    .footer-column h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 46px; height: 3px; background: linear-gradient(90deg,#4f46e5,#ec4899); border-radius: 3px;}
     .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700;}
     .footer-logo img { width: 35px; height: 35px;}
     .footer-about p { color: #d1d5db; margin-bottom: 1.2rem; line-height: 1.6;}
     .footer-links li { margin-bottom: 0.7rem;}
-    .footer-links a { color: #d1d5db; display: flex; align-items: center; gap: 0.5rem; transition: var(--transition);}
+    .footer-links a { color: #d1d5db; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
     .footer-links a:hover, .footer-links a:focus { color: #fff; transform: translateX(4px);}
     .footer-links a i { font-size: 0.9rem;}
     .footer-social-links { display: flex; gap: 0.8rem; margin-top: 1.2rem;}
-    .footer-social-links a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; color: #fff; font-size: 1.1rem; transition: var(--transition);}
-    .footer-social-links a:hover, .footer-social-links a:focus { background: var(--primary-color); transform: translateY(-2px);}
+    .footer-social-links a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; color: #fff; font-size: 1.1rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .footer-social-links a:hover, .footer-social-links a:focus { background: #4f46e5; transform: translateY(-2px);}
     .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); color: #9ca3af; font-size: 0.9rem;}
     /* Scroll to Top */
-    .scroll-top { position: fixed; bottom: 1.4rem; right: 1.4rem; width: 46px; height: 46px; background: var(--primary-color); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: var(--transition); z-index: 99; box-shadow: 0 5px 15px rgba(0,0,0,0.16); font-size: 1.1rem;}
+    .scroll-top { position: fixed; bottom: 1.4rem; right: 1.4rem; width: 46px; height: 46px; background: #4f46e5; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 99; box-shadow: 0 5px 15px rgba(0,0,0,0.16); font-size: 1.1rem;}
     .scroll-top.active { opacity: 1; visibility: visible;}
-    .scroll-top:hover { background: var(--secondary-color); transform: translateY(-2px);}
+    .scroll-top:hover { background: #4338ca; transform: translateY(-2px);}
     /* Accessibility: Focus Ring */
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px;}
+    a:focus-visible, button:focus-visible { outline: 2px solid #ec4899; outline-offset: 2px;}
     /* Responsive */
     @media (max-width: 1024px) { .author-container { grid-template-columns: 1fr; gap: 2.1rem; } }
     @media (max-width: 768px) {
-      .nav-links { position: fixed; top: 75px; left: -100%; width: 100%; height: calc(100vh - 75px); background: #fff; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 2.5rem; transition: var(--transition); z-index: 99;}
+      .nav-links { position: fixed; top: 75px; left: -100%; width: 100%; height: calc(100vh - 75px); background: #fff; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 2.5rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 99;}
       .nav-links.active { left: 0;}
       .mobile-menu-btn { display: block;}
-      .author-header h1 { font-size: 2.1rem; }
-      .author-info h2 { font-size: 1.3rem; }
+      .author-header h1 { font-size: 2.1rem;}
+      .author-info h2 { font-size: 1.3rem;}
       .footer-content { grid-template-columns: 1fr 1fr; gap: 1.2rem;}
+      .author-container { padding: 1.2rem;}
+      .author-img { max-width: 100%; }
     }
     @media (max-width: 576px) {
       .container { padding: 0 0.7rem; }
-      .author-header h1 { font-size: 1.5rem; }
+      .author-header h1 { font-size: 1.5rem;}
       .author-container { padding: 1rem;}
       .stats-grid { grid-template-columns: 1fr;}
       .footer-content { grid-template-columns: 1fr;}
+      .author-img-container { width: 100%; }
+      .author-img { max-width: 100%; }
     }
     /* Animations */
     @keyframes fadeIn {
@@ -222,14 +217,14 @@
   <!-- Author Content -->
   <section class="author-section">
     <div class="container">
-      <div class="author-container fade-in" itemscope itemtype="https://schema.org/Person">
+      <div class="author-container fade-in">
         <div class="author-img-container">
-          <img src="author.webp" alt="Mr. Ali Akber - Founder of Guide Hubz" class="author-img" itemprop="image">
+          <img src="author.webp" alt="Mr. Ali Akber - Founder of Guide Hubz" class="author-img">
         </div>
         <div class="author-info">
-          <h2 itemprop="name">Mr. Ali Akber</h2>
-          <p class="author-title" itemprop="jobTitle">Founder & Chief Content Creator at Guide Hubz</p>
-          <p class="author-bio" itemprop="description">
+          <h2>Mr. Ali Akber</h2>
+          <p class="author-title">Founder & Chief Content Creator at Guide Hubz</p>
+          <p class="author-bio">
             With over 2 years of experience in content creation and digital strategy, Ali Akber is the driving force behind Guide Hubz. His passion for technology, finance, and personal development led him to create this platform to share practical knowledge with readers worldwide.
           </p>
           <p class="author-bio">
@@ -244,7 +239,7 @@
                 </div>
                 <div class="contact-details">
                   <h3>Email</h3>
-                  <a href="mailto:info@guidehubz.com" itemprop="email">info@guidehubz.com</a>
+                  <a href="mailto:info@guidehubz.com">info@guidehubz.com</a>
                 </div>
               </li>
               <li class="contact-item">
@@ -253,7 +248,7 @@
                 </div>
                 <div class="contact-details">
                   <h3>Phone</h3>
-                  <a href="tel:+447543945859" itemprop="telephone">+44 7543 945859</a>
+                  <a href="tel:+447543945859">+44 7543 945859</a>
                 </div>
               </li>
               <li class="contact-item">
@@ -262,7 +257,7 @@
                 </div>
                 <div class="contact-details">
                   <h3>Location</h3>
-                  <p itemprop="address">Knowledge City, Pakistan</p>
+                  <p>Knowledge City, Pakistan</p>
                 </div>
               </li>
             </ul>
