@@ -1,0 +1,17 @@
+# Main page redirects
+/ /index.html 200
+/about /about.html 200
+/blog /blog.html 200
+/contactus /contactus.html 200
+/login /login.html 200
+/register /register.html 200
+/privacy-policy /privacy-policy.html 200
+/terms-and-conditions /terms-and-conditions.html 200
+/disclaimer /disclaimer.html 200
+/author /author.html 200
+
+# Individual blog post redirects - IMPORTANT: This must come before the catch-all
+/blog/* /blog-posts/:splat.html 200
+
+# Catch all 404 redirects - This must be last
+/* /index.html 404

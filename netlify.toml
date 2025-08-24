@@ -51,13 +51,13 @@
   to = "/author.html"
   status = 200
 
-# Handle blog post URLs
+# Handle individual blog post URLs - IMPORTANT: This must come before the catch-all
 [[redirects]]
   from = "/blog/*"
   to = "/blog-posts/:splat.html"
   status = 200
 
-# Handle 404 errors
+# Handle 404 errors - This must be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
