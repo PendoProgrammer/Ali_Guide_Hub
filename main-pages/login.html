@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5070235753694240"
+     crossorigin="anonymous"></script>
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id=GTM-WKRP94WK';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKRP94WK');
+</script>
+<!-- End Google Tag Manager -->
+<meta name="robots" content="index, follow">
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R10QVKDHZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R10QVKDHZW');
+</script>
+  <!-- Yahan meta tags aur CSS links waghera hon -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Guide Hubz</title>
+    <link rel="shortcut icon" href="../images/logo.webp" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* CSS Reset & Base Styles */
+      :root {
+        --primary-color: #4f46e5;
+        --secondary-color: #4338ca;
+        --accent-color: #ec4899;
+        --light-color: #f9fafb;
+        --dark-color: #111827;
+        --gray-color: #6b7280;
+        --max-width: 1200px;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: white;
+        box-shadow: var(--box-shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark-color);
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      .nav-links a {
+        color: var(--dark-color);
+        font-weight: 600;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-links a.active {
+        color: var(--primary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--dark-color);
+      }
+
+      /* Login Section Styles */
+      .login-section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 4rem 0;
+      }
+
+      .login-container {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+        background: white;
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        border: 1px solid #e5e7eb;
+      }
+
+      .login-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .login-header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .login-header p {
+        color: var(--gray-color);
+      }
+
+      .login-form .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .login-form .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .login-form .form-control {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: var(--border-radius);
+        font-family: inherit;
+        transition: var(--transition);
+      }
+
+      .login-form .form-control:focus {
+        border-color: var(--primary-color);
+        outline: none;
+
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .remember-me input {
+        width: 16px;
+        height: 16px;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 1rem;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        margin-bottom: 1.5rem;
+      }
+
+      .login-btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      .social-login {
+        margin-bottom: 1.5rem;
+      }
+
+      .social-login p {
+        text-align: center;
+        color: var(--gray-color);
+        margin-bottom: 1rem;
+        position: relative;
+      }
+
+      .social-login p::before,
+      .social-login p::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 30%;
+        height: 1px;
+        background: #e5e7eb;
+      }
+
+      .social-login p::before {
+        left: 0;
+      }
+
+      .social-login p::after {
+        right: 0;
+      }
+
+      .social-btns {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .social-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: var(--transition);
+      }
+
+      .social-btn.google {
+        background: #db4437;
+      }
+
+      .social-btn.facebook {
+        background: #3b5998;
+      }
+
+      .social-btn.twitter {
+        background: #1da1f2;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-3px);
+      }
+
+      .register-link {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      /* Footer Styles */
+      footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 2rem 0;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-column h3 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: #d1d5db;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #9ca3af;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .nav-links {
+          position: fixed;
+          top: 90px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 90px);
+          background: white;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 2rem;
+          padding-top: 3rem;
+          transition: var(--transition);
+          z-index: 99;
+        }
+
+        .nav-links.active {
+          left: 0;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .login-container {
+          padding: 2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .login-header h1 {
+          font-size: 1.8rem;
+        }
+
+        .social-btns {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRP94WK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <img
+              src="../images/logo.webp"
+              alt="Guide Hubz
+
+ Logo"
+            />
+            <span>Guide Hubz </span>
+          </a>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="blog.html"><i class="fas fa-book-open"></i> Blog</a>
+            </li>
+            <li>
+              <a href="about.html"><i class="fas fa-user"></i> About</a>
+            </li>
+                       <li>
+              <a href="contactus.html"
+                ><i class="fas fa-envelope"></i> Contact</a
+              >
+            </li>
+                        <li>
+  <a href="author.html"><i class="fas fa-user-edit"></i>Authors</a>
+</li>
+            <li>
+              <a href="login.html" class="active"
+                ><i class="fas fa-sign-in-alt"></i> Login</a
+              >
+            </li>
+          </ul>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+      <div class="container">
+        <div class="login-container">
+          <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Sign in to access your account and continue learning</p>
+          </div>
+
+          <form class="login-form" id="loginForm">
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <div class="remember-forgot">
+              <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember">Remember me</label>
+              </div>
+              <a href="index.html">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Sign In</button>
+
+            <div class="social-login">
+              <p>Or sign in with</p>
+              <div class="social-btns">
+                <a href="index.html" class="social-btn google">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="index.html" class="social-btn facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="index.html" class="social-btn twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="register-link">
+              <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="../images/logo.webp"
+                alt="Guide Hubz Logo"
+              />
+              <span>Guide Hubz</span>
+            </div>
+            <div class="footer-about">
+            <p>
+              Your trusted source for expert guides on technology, health,
+                finance, and lifestyle. We provide practical, actionable advice
+                to help you live better.
+              </p>
+            </div>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61579041620370"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/mraliakber1" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/mr.aliakber1/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@mraliakber1" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+              <a href="https://github.com/PendoProgrammer" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a>
+              </li>
+              <li>
+                <a href="blog.html"><i class="fas fa-chevron-right"></i> Categories</a>
+              </li>
+              <li>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+              </li>
+              <li>
+                <a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="blog-posts/top_10_AI_tool.html"><i class="fas fa-chevron-right"></i> Technology</a>
+              </li>
+              <li>
+                <a href="blog-posts/healthy_morning_routine.html"><i class="fas fa-chevron-right"></i> Health & Wellness</a>
+              </li>
+              <li>
+                <a href="blog-posts/Forex_Trading_Blog.html"><i class="fas fa-chevron-right"></i> Finance</a>
+              </li>
+              <li>
+                <a href="blog-posts/10_daily_habits_successfull_people.html"><i class="fas fa-chevron-right"></i> Productivity</a>
+              </li>
+              <li>
+                <a href="blog-posts/10_daily_habits_successfull_people.html"><i class="fas fa-chevron-right"></i> Lifestyle</a>
+              </li>
+            </ul>
+          </div>
+                    <div class="footer-column">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Pakistan, Knowledge City</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <a href="mailto:info@guidehubz.com">Email Us: info@guidehubz.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <a href="tel:+1234567890">+44 7543 945859</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            &copy; 2025 Guide Hubz. All rights reserved. |
+            <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
+            <a href="terms-and-conditions.html" target="_blank">Terms of Service</a> |
+            <a href="disclaimer.html" target="_blank">Disclaimer</a> |
+            <a href="about.html" target="_blank">About Us</a> |
+            <a href="contactus.html" target="_blank">Contact</a> |
+            <a href="sitemap.xml" target="_blank">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Login Form Submission
+      const loginForm = document.getElementById("loginForm");
+
+      if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const email = this.querySelector("#email").value;
+          const password = this.querySelector("#password").value;
+          const remember = this.querySelector("#remember").checked;
+
+          // Simple validation
+          if (!email || !password) {
+            alert("Please fill in all fields");
+            return;
+          }
+
+          if (!email.includes("@")) {
+            alert("Please enter a valid email address");
+            return;
+          }
+
+          // Here you would typically send this data to your server
+          // console.log("Login form submitted:", { email, password, remember });
+
+          // Redirect after successful login
+          // window.location.href = "dashboard.html";
+
+          // For demo purposes, just show success message
+          alert("Login successful! Redirecting to dashboard...");
+        });
+      }
+    </script>
+  </body>
+</html>

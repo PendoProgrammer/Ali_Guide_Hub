@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Meet Mr. Ali Akber - Founder & Author of Guide Hubz. Expert in Technology, Finance, and Lifestyle content creation.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Mr. Ali Akber">
+  <meta name="keywords" content="Guide Hubz author, Ali Akber, technology expert, finance blogger, lifestyle content creator">
+  <title>Meet Our Author | Guide Hubz Founder - Ali Akber</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../images/logo.webp" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    html, body {
+      width: 100%;
+      min-width: 0 !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+      background: #f9fafb;
+    }
+    body {
+      font-family: "Montserrat", Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #111827;
+    }
+    *, *:before, *:after { box-sizing: border-box; }
+    a { text-decoration: none; color: #4f46e5; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    a:hover, a:focus { color: #4338ca; outline: none;}
+    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4 { font-family: "Playfair Display", serif; margin-bottom: 1rem; line-height: 1.2;}
+    ul { list-style: none; padding-left: 0; margin-left: 0;}
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; box-sizing: border-box; }
+    .section-title { font-size: 2.2rem; margin-bottom: 2rem; position: relative; padding-bottom: 1rem; }
+    .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 80px; height: 5px; background: linear-gradient(90deg,#4f46e5,#ec4899); border-radius: 5px;}
+    header { background: #fff; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0;}
+    .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.8rem; font-weight: 700; color: #111827;}
+    .logo img { width: 40px; height: 40px;}
+    .nav-links { display: flex; align-items: center; gap: 2.5rem;}
+    .nav-links a { color: #111827; font-weight: 600; position: relative; display: flex; align-items: center; gap: 0.5rem;}
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 3px; background: linear-gradient(90deg,#4f46e5,#ec4899); transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .nav-links a:hover::after { width: 100%; }
+    .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #111827;}
+    .author-header { background: linear-gradient(135deg,rgba(79,70,229,0.1) 0%,rgba(236,72,153,0.1) 100%); padding: 4rem 0 3rem; text-align: center;}
+    .author-header h1 { font-size: 2.8rem;}
+    .author-section { padding: 3rem 0; }
+    .author-container { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 3rem; 
+      align-items: center; 
+      background: #fff; 
+      padding: 2.5rem; 
+      border-radius: 12px; 
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05); 
+      border: 1px solid #e5e7eb;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .author-img-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .author-img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+      margin: 0 auto;
+      display: block;
+      background: #f9fafb;
+    }
+    .author-info {
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .author-info h2 { margin-bottom: 0.2rem; font-size: 2rem; color: #4f46e5;}
+    .author-title { font-weight: 600; color: #4f46e5; margin-bottom: 1rem; word-break: break-word;}
+    .author-bio { color: #6b7280; margin-bottom: 1rem;}
+    .author-contact { margin-top: 2rem;}
+    .contact-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item { display: flex; align-items: center; gap: 1.2rem;}
+    .contact-icon { width: 44px; height: 44px; background: rgba(79,70,229,0.13); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4f46e5; font-size: 1.2rem;}
+    .contact-details h3 { font-size: 1rem; margin-bottom: 0.2rem;}
+    .contact-details p,
+    .contact-details a { color: #6b7280; font-size: 0.95rem;}
+    .social-links { display: flex; gap: 1rem; margin-top: 2rem;}
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(79,70,229,0.13); border-radius: 50%; color: #4f46e5; font-size: 1.2rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .social-links a:hover, .social-links a:focus { background: #4f46e5; color: #fff; transform: translateY(-2px);}
+    .author-stats { margin-top: 3rem;}
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 1.2rem; margin-top: 1.5rem;}
+    .stat-card { background: #fff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05); padding: 1.5rem; text-align: center; border: 1px solid #e5e7eb; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .stat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 24px -5px rgba(0,0,0,0.13),0 10px 10px -5px rgba(0,0,0,0.04);}
+    .stat-number { font-size: 2.2rem; font-weight: 700; color: #4f46e5; margin-bottom: 0.3rem;}
+    .stat-label { color: #6b7280; font-size: 1rem;}
+    footer { background: #111827; color: #fff; padding: 3rem 0 1.5rem;}
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 2rem; margin-bottom: 2rem;}
+    .footer-column h3 { color: #fff; margin-bottom: 1.2rem; font-size: 1.15rem; position: relative; padding-bottom: 0.5rem;}
+    .footer-column h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 46px; height: 3px; background: linear-gradient(90deg,#4f46e5,#ec4899); border-radius: 3px;}
+    .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700;}
+    .footer-logo img { width: 35px; height: 35px;}
+    .footer-about p { color: #d1d5db; margin-bottom: 1.2rem; line-height: 1.6;}
+    .footer-links li { margin-bottom: 0.7rem;}
+    .footer-links a { color: #d1d5db; display: flex; align-items: center; gap: 0.5rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .footer-links a:hover, .footer-links a:focus { color: #fff; transform: translateX(4px);}
+    .footer-links a i { font-size: 0.9rem;}
+    .footer-social-links { display: flex; gap: 0.8rem; margin-top: 1.2rem;}
+    .footer-social-links a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.15); border-radius: 50%; color: #fff; font-size: 1.1rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .footer-social-links a:hover, .footer-social-links a:focus { background: #4f46e5; transform: translateY(-2px);}
+    .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); color: #9ca3af; font-size: 0.9rem;}
+    .scroll-top { position: fixed; bottom: 1.4rem; right: 1.4rem; width: 46px; height: 46px; background: #4f46e5; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 99; box-shadow: 0 5px 15px rgba(0,0,0,0.16); font-size: 1.1rem;}
+    .scroll-top.active { opacity: 1; visibility: visible;}
+    .scroll-top:hover { background: #4338ca; transform: translateY(-2px);}
+    a:focus-visible, button:focus-visible { outline: 2px solid #ec4899; outline-offset: 2px;}
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .container { padding: 0 1rem !important; }
+      .author-container { grid-template-columns: 1fr; gap: 2.1rem; padding: 1.5rem; }
+      .footer-content { grid-template-columns: 1fr 1fr; gap: 1.2rem;}
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 0.7rem !important; }
+      .nav-links { position: fixed; top: 75px; left: -100%; width: 100%; height: calc(100vh - 75px); background: #fff; flex-direction: column; align-items: center; justify-content: flex-start; gap: 1.5rem; padding-top: 2.5rem; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); z-index: 99;}
+      .nav-links.active { left: 0;}
+      .mobile-menu-btn { display: block;}
+      .author-header h1 { font-size: 2.1rem; }
+      .author-info h2 { font-size: 1.3rem;}
+      .footer-content { grid-template-columns: 1fr 1fr; gap: 1.2rem;}
+      .author-container { padding: 1.2rem;}
+      .author-img { max-width: 100%; }
+      .author-info { padding: 0; }
+    }
+    @media (max-width: 576px) {
+      .container { padding: 0 0.1rem !important; }
+      .author-header h1 { font-size: 1.5rem;}
+      .author-container { padding: 0.3rem !important; }
+      .stats-grid { grid-template-columns: 1fr;}
+      .footer-content { grid-template-columns: 1fr;}
+      .author-img-container { width: 100%; }
+      .author-img { max-width: 100%; }
+      .author-info h2 { font-size: 1.1rem;}
+      .author-title { font-size: 1rem;}
+      .author-info { padding: 0 !important; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .fade-in { animation: fadeIn 0.6s ease forwards;}
+    .delay-1 { animation-delay: 0.2s;}
+    .delay-2 { animation-delay: 0.4s;}
+    .delay-3 { animation-delay: 0.6s;}
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKRP94WK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="index.html" class="logo" aria-label="Guide Hubz Home">
+          <img src="../images/logo.webp" alt="Guide Hubz Logo" />
+          <span>Guide Hubz</span>
+        </a>
+        <ul class="nav-links" id="main-nav">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="blog.html"><i class="fas fa-book-open"></i> Blog</a></li>
+          <li><a href="index.html#categories"><i class="fas fa-tags"></i> Categories</a></li>
+          <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+          <li><a href="contactus.html"><i class="fas fa-envelope"></i> Contact</a></li>
+          <li><a href="author.html"><i class="fas fa-user-edit"></i>Authors</a></li>
+          <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-controls="main-nav" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Author Header -->
+  <section class="author-header">
+    <div class="container">
+      <h1 class="fade-in">Meet Our Author</h1>
+      <p class="fade-in delay-1">The creative mind behind Guide Hubz</p>
+    </div>
+  </section>
+
+  <!-- Author Content -->
+  <section class="author-section">
+    <div class="container">
+      <div class="author-container fade-in">
+        <div class="author-img-container">
+          <img src="../images/author.webp" alt="Mr. Ali Akber - Founder of Guide Hubz" class="author-img">
+        </div>
+        <div class="author-info">
+          <h2>Mr. Ali Akber</h2>
+          <p class="author-title">Founder & Chief Content Creator at Guide Hubz</p>
+          <p class="author-bio">
+            With over 2 years of experience in content creation and digital strategy, Ali Akber is the driving force behind Guide Hubz. His passion for technology, finance, and personal development led him to create this platform to share practical knowledge with readers worldwide.
+          </p>
+          <p class="author-bio">
+            Ali specializes in breaking down complex topics into easy-to-understand guides that anyone can apply in their daily lives. When he's not writing or researching, you can find him exploring new technologies or mentoring aspiring content creators.
+          </p>
+          <div class="author-contact">
+            <h3>Connect With Ali</h3>
+            <ul class="contact-list">
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h3>Email</h3>
+                  <a href="mailto:info@guidehubz.com">info@guidehubz.com</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h3>Phone</h3>
+                  <a href="tel:+447543945859">+44 7543 945859</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h3>Location</h3>
+                  <p>Knowledge City, Pakistan</p>
+                </div>
+              </li>
+            </ul>
+            <div class="social-links" aria-label="Ali Akber Social Links">
+              <a href="https://www.facebook.com/profile.php?id=61579041620370" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/mr.aliakber1/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/mr.aliakber1/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              <a href="https://github.com/PendoProgrammer" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://wa.me/447543945859" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="author-stats fade-in delay-1">
+        <h2 class="section-title">Author Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">250+</div>
+            <div class="stat-label">Published Articles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">500K+</div>
+            <div class="stat-label">Monthly Readers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Countries Reached</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="../images/logo.webp"
+                alt="Guide Hubz Logo"
+              />
+              <span>Guide Hubz</span>
+            </div>
+            <div class="footer-about">
+              <p>
+                Your trusted source for expert guides on technology, health,
+                finance, and lifestyle. We provide practical, actionable advice
+                to help you live better.
+              </p>
+            </div>
+            <div class="social-links">
+              <a href="https://www.facebook.com/profile.php?id=61579041620370"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/mraliakber1" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/mr.aliakber1/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@mraliakber1" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+              <a href="https://github.com/PendoProgrammer" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a>
+              </li>
+              <li>
+                <a href="blog.html"><i class="fas fa-chevron-right"></i> Categories</a>
+              </li>
+              <li>
+                <a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a>
+              </li>
+              <li>
+                <a href="contactus.html"><i class="fas fa-chevron-right"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Categories</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="blog-posts/top_10_AI_tool.html"><i class="fas fa-chevron-right"></i> Technology</a>
+              </li>
+              <li>
+                <a href="blog-posts/healthy_morning_routine.html"><i class="fas fa-chevron-right"></i> Health & Wellness</a>
+              </li>
+              <li>
+                <a href="blog-posts/Forex_Trading_Blog.html"><i class="fas fa-chevron-right"></i> Finance</a>
+              </li>
+              <li>
+                <a href="blog-posts/10_daily_habits_successfull_people.html"><i class="fas fa-chevron-right"></i> Productivity</a>
+              </li>
+              <li>
+                <a href="blog-posts/10_daily_habits_successfull_people.html"><i class="fas fa-chevron-right"></i> Lifestyle</a>
+              </li>
+            </ul>
+          </div>
+                    <div class="footer-column">
+            <h3>Contact Info</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Pakistan, Knowledge City</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <a href="mailto:info@guidehubz.com">Email Us: info@guidehubz.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <a href="tel:+1234567890">+44 7543 945859</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            &copy; 2025 Guide Hubz. All rights reserved. |
+            <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
+            <a href="terms-and-conditions.html" target="_blank">Terms of Service</a> |
+            <a href="disclaimer.html" target="_blank">Disclaimer</a> |
+            <a href="about.html" target="_blank">About Us</a> |
+            <a href="contactus.html" target="_blank">Contact</a> |
+            <a href="sitemap.xml" target="_blank">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" aria-label="Scroll to Top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- JS: Mobile Menu/Scroll/Accessibility -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    mobileMenuBtn.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+
+    // Scroll To Top Button
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', function() {
+      if(window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('active');
+      } else {
+        scrollTopBtn.classList.remove('active');
+      }
+    });
+    scrollTopBtn.addEventListener('click', function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // Accessibility: Close menu with ESC
+    document.addEventListener('keydown', function(e){
+      if(e.key === "Escape" && navLinks.classList.contains('active')){
+        navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', false);
+      }
+    });
+  </script>
+</body>
+</html>
