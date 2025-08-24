@@ -102,7 +102,7 @@
           }
 
           // Here you would typically send the email to your server
-          console.log("Subscribed email:", email);
+          // console.log("Subscribed email:", email);
 
           // Show success message
           alert("Thank you for subscribing to our newsletter!");
@@ -135,12 +135,12 @@
           }
 
           // Here you would typically send this data to your server
-          console.log("Contact form submitted:", {
-            name,
-            email,
-            subject,
-            message,
-          });
+          // console.log("Contact form submitted:", {
+          //   name,
+          //   email,
+          //   subject,
+          //   message,
+          // });
 
           // Show success message
           alert("Thank you for your message! We will get back to you soon.");
