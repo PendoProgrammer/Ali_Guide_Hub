@@ -2,10 +2,10 @@ import os
 import re
 from pathlib import Path
 
-def final_link_fix():
-    """Final comprehensive fix for all link issues"""
+def fix_root_paths():
+    """Fix all link paths to work correctly from the root directory"""
     
-    print("🔄 Final comprehensive link fixing...")
+    print("🔄 Fixing all link paths to work from root directory...")
     
     # Update main-pages folder
     main_pages_dir = "main-pages"
@@ -26,27 +26,68 @@ def final_link_fix():
             
             original_content = content
             
-            # Fix malformed links with duplicate blog-posts paths
+            # Fix links to other main pages (should be relative to root)
             content = re.sub(
-                r'href="blog-posts/blog-posts/blog-posts/([^"]*\.html)"',
-                r'href="blog-posts/\1"',
+                r'href="(index\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="blog-posts/blog-posts/([^"]*\.html)"',
-                r'href="blog-posts/\1"',
+                r'href="(about\.html)"',
+                r'href="../\1"',
                 content
             )
             
-            # Fix links that are missing quotes or have broken formatting
             content = re.sub(
-                r'href="([^"]*\.html)\s*\n\s*"',
-                r'href="\1"',
+                r'href="(author\.html)"',
+                r'href="../\1"',
                 content
             )
             
-            # Fix links that point to blog posts but don't have blog-posts/ prefix
+            content = re.sub(
+                r'href="(contactus\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            content = re.sub(
+                r'href="(blog\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            content = re.sub(
+                r'href="(login\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            content = re.sub(
+                r'href="(register\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            content = re.sub(
+                r'href="(privacy-policy\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            content = re.sub(
+                r'href="(terms-and-conditions\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            content = re.sub(
+                r'href="(disclaimer\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            # Fix links to blog posts (should be relative to root)
             main_page_names = ['index.html', 'about.html', 'author.html', 'contactus.html', 'blog.html', 'login.html', 'register.html', 'privacy-policy.html', 'terms-and-conditions.html', 'disclaimer.html']
             
             def replace_blog_links(match):
@@ -55,11 +96,20 @@ def final_link_fix():
                     # Check if it already has blog-posts prefix
                     if not href_content.startswith('blog-posts/'):
                         return f'href="blog-posts/{href_content}"'
+                    else:
+                        return f'href="{href_content}"'
                 return match.group(0)
             
             content = re.sub(
                 r'href="([^"]*\.html)"',
                 replace_blog_links,
+                content
+            )
+            
+            # Fix breadcrumb links to point to root
+            content = re.sub(
+                r'href="../index\.html"',
+                r'href="../index.html"',
                 content
             )
             
@@ -92,64 +142,71 @@ def final_link_fix():
             
             original_content = content
             
-            # Fix links to main pages (need to go up to main-pages folder)
+            # Fix links to main pages (should be relative to root)
             content = re.sub(
-                r'href="(index\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(index\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(about\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(about\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(author\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(author\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(contactus\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(contactus\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(blog\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(blog\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(login\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(login\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(register\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(register\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(privacy-policy\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(privacy-policy\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(terms-and-conditions\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(terms-and-conditions\.html)"',
+                r'href="../\1"',
                 content
             )
             
             content = re.sub(
-                r'href="(disclaimer\.html)"',
-                r'href="../main-pages/\1"',
+                r'href="../main-pages/(disclaimer\.html)"',
+                r'href="../\1"',
+                content
+            )
+            
+            # Fix breadcrumb links to point to root
+            content = re.sub(
+                r'href="../index\.html"',
+                r'href="../index.html"',
                 content
             )
             
@@ -164,10 +221,10 @@ def final_link_fix():
         except Exception as e:
             print(f"  ✗ Error processing {html_file}: {e}")
     
-    print(f"\n✅ Final link fixing completed!")
+    print(f"\n✅ Root path fixing completed!")
     print(f"📁 Main pages: {len(main_pages_files)} files")
     print(f"📝 Blog posts: {len(blog_posts_files)} files")
-    print(f"🔗 All links now work correctly")
+    print(f"🔗 All links now work correctly from root directory")
 
 if __name__ == "__main__":
-    final_link_fix()
+    fix_root_paths()
