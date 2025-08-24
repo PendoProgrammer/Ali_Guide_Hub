@@ -524,6 +524,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
 
       /* Responsive Styles */
+      @media (max-width: 1200px) {
+        .container {
+          padding: 0 2rem;
+        }
+        
+        .posts-grid {
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+      }
+
       @media (max-width: 992px) {
         .nav-links {
           position: fixed;
@@ -558,9 +568,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           align-items: center;
           text-align: center;
         }
+
+        .footer-content {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 2rem;
+        }
+
+        .posts-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 1.5rem;
+        }
       }
 
       @media (max-width: 768px) {
+        .container {
+          padding: 0 1.5rem;
+        }
+
         .post-hero h1 {
           font-size: 2.2rem;
         }
@@ -571,6 +595,274 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .section-title {
           font-size: 1.8rem;
+        }
+
+        .post-content h2 {
+          font-size: 1.6rem;
+        }
+
+        .post-content h3 {
+          font-size: 1.3rem;
+        }
+
+        .author-card {
+          padding: 1.5rem;
+        }
+
+        .author-img {
+          width: 80px;
+          height: 80px;
+        }
+
+        .posts-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .post-card-content {
+          padding: 1.2rem;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .footer-logo {
+          justify-content: center;
+        }
+
+        .footer-social-links {
+          justify-content: center;
+        }
+
+        .calculation-card {
+          padding: 1.5rem;
+        }
+
+        .highlight-box {
+          padding: 1.2rem;
+        }
+
+        .example-box {
+          padding: 1.2rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          padding: 0 1rem;
+        }
+
+        .post-hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .post-hero-img {
+          height: 200px;
+        }
+
+        .post-meta {
+          flex-direction: column;
+          gap: 0.8rem;
+          align-items: flex-start;
+        }
+
+        .post-category {
+          font-size: 0.8rem;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+        }
+
+        .post-content h2 {
+          font-size: 1.4rem;
+        }
+
+        .post-content h3 {
+          font-size: 1.2rem;
+        }
+
+        .author-card {
+          padding: 1rem;
+        }
+
+        .author-img {
+          width: 70px;
+          height: 70px;
+        }
+
+        .post-card-content {
+          padding: 1rem;
+        }
+
+        .post-card-title {
+          font-size: 1.1rem;
+        }
+
+        .btn {
+          padding: 0.7rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .calculation-card {
+          padding: 1rem;
+        }
+
+        .highlight-box {
+          padding: 1rem;
+        }
+
+        .example-box {
+          padding: 1rem;
+        }
+
+        .formula {
+          padding: 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .navbar {
+          padding: 1rem 0;
+        }
+
+        .logo {
+          font-size: 1.5rem;
+        }
+
+        .logo img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .post-hero h1 {
+          font-size: 1.6rem;
+        }
+
+        .post-hero-img {
+          height: 180px;
+        }
+
+        .post-content {
+          padding: 1.5rem 0 3rem;
+        }
+
+        .post-content h2 {
+          font-size: 1.3rem;
+        }
+
+        .post-content h3 {
+          font-size: 1.1rem;
+        }
+
+        .post-content p {
+          font-size: 0.95rem;
+        }
+
+        .author-card {
+          padding: 0.8rem;
+        }
+
+        .author-img {
+          width: 60px;
+          height: 60px;
+        }
+
+        .author-info h4 {
+          font-size: 1.1rem;
+        }
+
+        .author-title {
+          font-size: 0.8rem;
+        }
+
+        .author-bio {
+          font-size: 0.9rem;
+        }
+
+        .social-links a {
+          width: 30px;
+          height: 30px;
+          font-size: 1rem;
+        }
+
+        .footer-content {
+          gap: 1.5rem;
+        }
+
+        .footer-column h3 {
+          font-size: 1.1rem;
+        }
+
+        .footer-links a {
+          font-size: 0.9rem;
+        }
+
+        .copyright p {
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .post-hero h1 {
+          font-size: 1.4rem;
+        }
+
+        .post-hero-img {
+          height: 160px;
+        }
+
+        .post-content h2 {
+          font-size: 1.2rem;
+        }
+
+        .post-content h3 {
+          font-size: 1rem;
+        }
+
+        .post-content p {
+          font-size: 0.9rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.85rem;
+        }
+
+        .post-card-content {
+          padding: 0.8rem;
+        }
+
+        .post-card-title {
+          font-size: 1rem;
+        }
+
+        .post-card-excerpt {
+          font-size: 0.85rem;
+        }
+
+        .author-card {
+          padding: 0.6rem;
+        }
+
+        .author-img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .author-info h4 {
+          font-size: 1rem;
+        }
+
+        .author-title {
+          font-size: 0.75rem;
+        }
+
+        .author-bio {
+          font-size: 0.8rem;
         }
       }
       ul {
@@ -633,7 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="container">
         <div class="post-meta">
           <span class="post-category">Finance</span>
-          <span>July 28, 2025</span>
+          <span>July 20, 2025</span>
           <span><i class="far fa-eye"></i> 1.8K</span>
         </div>
         <h1>What Is a PIP in Forex? Simple Explanation for New Traders</h1>
