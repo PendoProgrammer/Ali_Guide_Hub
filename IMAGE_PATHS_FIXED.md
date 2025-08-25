@@ -16,13 +16,13 @@ Updated all image paths to use relative paths that work from the new folder stru
 ### 📁 **Main Pages** (`main-pages/` folder)
 
 - **Before**: `src="images/logo.webp"`
-- **After**: `src="../images/logo.webp"`
+- **After**: `src="/images/logo.webp"`
 - **Explanation**: `../` goes up one level from `main-pages/` to access the `images/` folder
 
 ### 📝 **Blog Posts** (`blog-posts/` folder)
 
 - **Before**: `src="images/logo.webp"`
-- **After**: `src="../images/logo.webp"`
+- **After**: `src="/images/logo.webp"`
 - **Explanation**: `../` goes up one level from `blog-posts/` to access the `images/` folder
 
 ## 🔄 **Files Updated**
@@ -49,10 +49,10 @@ Updated all image paths to use relative paths that work from the new folder stru
 
 **Patterns Updated:**
 
-1. **`src="images/image.webp"`** → **`src="../images/image.webp"`**
-2. **`src='images/image.webp'`** → **`src='../images/image.webp'`**
-3. **`href="images/image.webp"`** → **`href="../images/image.webp"`**
-4. **`data-src="images/image.webp"`** → **`data-src="../images/image.webp"`**
+1. **`src="images/image.webp"`** → **`src="/images/image.webp"`**
+2. **`src='images/image.webp'`** → **`src='/images/image.webp'`**
+3. **`href="images/image.webp"`** → **`href="/images/image.webp"`**
+4. **`data-src="images/image.webp"`** → **`data-src="/images/image.webp"`**
 
 **File Types Supported:**
 
@@ -83,12 +83,12 @@ Updated all image paths to use relative paths that work from the new folder stru
 ```
 Ali_Guide_Hub/
 ├── main-pages/          # Core website pages
-│   ├── index.html       # Images: ../images/
-│   ├── about.html       # Images: ../images/
+│   ├── index.html       # Images: /images/
+│   ├── about.html       # Images: /images/
 │   └── ... (8 more)
 ├── blog-posts/          # All blog content
-│   ├── blog1.html       # Images: ../images/
-│   ├── blog2.html       # Images: ../images/
+│   ├── blog1.html       # Images: /images/
+│   ├── blog2.html       # Images: /images/
 │   └── ... (31 more)
 ├── images/              # All website images
 │   ├── logo.webp
@@ -99,8 +99,8 @@ Ali_Guide_Hub/
 
 **Path Resolution:**
 
-- **From main-pages/**: `../images/` → `Ali_Guide_Hub/images/` ✅
-- **From blog-posts/**: `../images/` → `Ali_Guide_Hub/images/` ✅
+- **From main-pages/**: `/images/` → `Ali_Guide_Hub/images/` ✅
+- **From blog-posts/**: `/images/` → `Ali_Guide_Hub/images/` ✅
 - **From root**: `images/` → `Ali_Guide_Hub/images/` ✅
 
 ## 🎉 **Status: COMPLETE**

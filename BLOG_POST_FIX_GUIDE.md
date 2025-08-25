@@ -3,6 +3,7 @@
 ## ❌ **Problem Identified**
 
 Your blog posts have **multiple HTML structures** in each file, causing:
+
 - **Layout breaking** - Content not displaying properly
 - **Multiple posts showing** - One blog post after another
 - **Navigation errors** - Users can't access individual posts
@@ -11,6 +12,7 @@ Your blog posts have **multiple HTML structures** in each file, causing:
 ## 🔍 **Root Cause**
 
 Each blog post file contains:
+
 - **Multiple `<!DOCTYPE html>` tags** (30+ per file)
 - **Multiple `<html>`, `<head>`, `<body>` tags**
 - **Mixed content** from different blog posts
@@ -25,62 +27,74 @@ Create a new file `clean_blog_template.html` with this structure:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BLOG_POST_TITLE | Guide Hubz</title>
-    <meta name="description" content="BLOG_POST_DESCRIPTION">
-    <meta name="keywords" content="BLOG_POST_KEYWORDS">
-    <meta name="author" content="Mr. Ali Akber">
-    <meta name="robots" content="index, follow">
-    
+    <meta name="description" content="BLOG_POST_DESCRIPTION" />
+    <meta name="keywords" content="BLOG_POST_KEYWORDS" />
+    <meta name="author" content="Mr. Ali Akber" />
+    <meta name="robots" content="index, follow" />
+
     <!-- Google Tag Manager -->
     <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-WKRP94WK';f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WKRP94WK');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-WKRP94WK";
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WKRP94WK");
     </script>
-    
-    <link rel="shortcut icon" href="images/logo.webp" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
+    <link rel="shortcut icon" href="images/logo.webp" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
-        /* Your CSS styles here */
+      /* Your CSS styles here */
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header>
-        <!-- Navigation -->
+      <!-- Navigation -->
     </header>
 
     <!-- Blog Post Hero -->
     <section class="post-hero">
-        <div class="container">
-            <div class="post-meta">
-                <span class="post-category">CATEGORY</span>
-                <span>DATE</span>
-                <span><i class="far fa-eye"></i> VIEWS</span>
-            </div>
-            <h1>BLOG_POST_TITLE</h1>
-            <img src="images/BLOG_IMAGE" alt="BLOG_IMAGE_ALT" class="post-hero-img">
+      <div class="container">
+        <div class="post-meta">
+          <span class="post-category">CATEGORY</span>
+          <span>DATE</span>
+          <span><i class="far fa-eye"></i> VIEWS</span>
         </div>
+        <h1>BLOG_POST_TITLE</h1>
+        <img
+          src="images/BLOG_IMAGE"
+          alt="BLOG_IMAGE_ALT"
+          class="post-hero-img"
+        />
+      </div>
     </section>
 
     <!-- Blog Post Content -->
     <section class="post-content">
-        <div class="container">
-            <!-- BLOG_POST_CONTENT_WILL_GO_HERE -->
-        </div>
+      <div class="container">
+        <!-- BLOG_POST_CONTENT_WILL_GO_HERE -->
+      </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <!-- Footer content -->
+      <!-- Footer content -->
     </footer>
-</body>
+  </body>
 </html>
 ```
 
@@ -109,11 +123,13 @@ For each blog post file:
 ### **Step 4: Fix Image Paths**
 
 Change all image paths from:
+
 ```html
-src="../images/image.webp"
+src="/images/image.webp"
 ```
 
 To:
+
 ```html
 src="images/image.webp"
 ```
@@ -128,14 +144,14 @@ import os
 
 def fix_all_blog_posts():
     """Fix all corrupted blog post files"""
-    
+
     blog_posts_dir = "blog-posts"
     template_file = "clean_blog_template.html"
-    
+
     # Read template
     with open(template_file, 'r', encoding='utf-8') as f:
         template = f.read()
-    
+
     # Process each blog post
     for filename in os.listdir(blog_posts_dir):
         if filename.endswith('.html'):
@@ -144,27 +160,27 @@ def fix_all_blog_posts():
 
 def fix_single_blog_post(filename, template):
     """Fix a single blog post file"""
-    
+
     filepath = os.path.join("blog-posts", filename)
-    
+
     # Read corrupted file
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
-    
+
     # Extract clean content (you'll need to customize this for each post)
     clean_content = extract_clean_content(content, filename)
-    
+
     # Create new file with clean structure
     new_filename = filename.replace('.html', '_FIXED.html')
     new_filepath = os.path.join("blog-posts", new_filename)
-    
+
     # Replace template placeholders
     fixed_content = template.replace('BLOG_POST_CONTENT_WILL_GO_HERE', clean_content)
-    
+
     # Write fixed file
     with open(new_filepath, 'w', encoding='utf-8') as f:
         f.write(fixed_content)
-    
+
     print(f"✅ Created: {new_filename}")
 
 # Run the fix
@@ -228,6 +244,7 @@ You have **32 blog post files** that need fixing:
 ## 🆘 **Need Help?**
 
 If you need assistance with this process:
+
 1. **Start with one blog post** as a test
 2. **Use the template** provided above
 3. **Extract only the main content** from each post
